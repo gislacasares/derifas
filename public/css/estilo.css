@@ -18,6 +18,8 @@ main {
 .flex {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .producto {
@@ -35,6 +37,38 @@ main {
     padding: 10px;
 }
 
-.texto-precio {
+.precio-producto {
     font-size: 18px;
+    color: green;
+}
+
+.precio-cupon {
+    font-size: 18px;
+    color: green;
+}
+
+.tags-ultimos-cupones {
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    background-color: #FCF3CF;
+    border-radius: 25px;
+}
+
+.tags-sale-sale {
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    background-color: #1ABC9C;
+    border-radius: 25px;
+}
+
+.tags-sortea-hoy {
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    background-color: #F1948A;
+    border-radius: 25px;
+}
+
+.titulo-producto {
+    text-align: center;
+    font-size: 1.5rem;
 }
