@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
 //agrego las rutas
-const rutasMain = require('./routes/main');
+const mainRoutes = require('./routes/mainRoutes');
 
 
 //Levanto la app localmente en el port 3000 o con el port que me asigne Heroku
@@ -11,13 +10,12 @@ app.listen(process.env.PORT || 3000, () => {
     console.log('Webserver levantado, corriendo y escuchando en el port 3000');
 });
 
+console.log(__dirname);
 //Va a servir los archivos publicos desde /img (esta es su raíz)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
+
+//Configuración del motor de vistas EJS
+app.set('view engine', 'ejs');
 
 //Seteos de endpoints
-app.use('/', rutasMain);
-/*
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/index.html'));
-});
-*/
+app.use('/', mainRoutes);
