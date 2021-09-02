@@ -15,20 +15,15 @@
 
 <body>
     <header>
-        <!--Logo-->
-        <img src="img/banner.jpg" width="100%" height="250px">
-        <!--Barra de Navegación-->
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Registrarse</a></li>
-                <li><a href="#">Ingresar</a></li>
-                <li><a href="#">Quienes Somos</a></li>
-                <li><a href="#">Nuestra app</a></li>
-            </ul>
-        </nav>
-        <!--Barra de Búsqueda-->
-        <!--Enlaces a redes sociales-->
+        <!--Logo y banner-->
+        <%- include('./partials/banner') %>
+
+            <!--Barra de Navegación-->
+            <%- include('./partials/nav-bar')%>
+
+
+                <!--Barra de Búsqueda-->
+                <!--Enlaces a redes sociales-->
     </header>
     <main>
         <h1>De rifas bienvenidos</h1>
@@ -136,7 +131,8 @@
         </section>
     </main>
     <footer>
-
+        <!-- footer-->
+        <%- include('./partials/footer') %>
     </footer>
 </body>
 
