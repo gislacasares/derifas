@@ -6,11 +6,14 @@ const controller = {
         return res.render('index');
     },
     registro: (req, res) => {
-        return res.render('registro');
+        res.render('registro');
     },
     ingreso: (req, res) => {
         return res.send('Ingreso');
     },
+    crearUsuario: (req, res) => {
+        res.render(req.body);
+    }
 };
 
 module.exports = controller;

@@ -8,5 +8,6 @@ router.get('/', mainController.index);
 router.use('/productos', productosRoutes);
 router.get('/ingreso', mainController.ingreso);
 router.get('/registro', mainController.registro);
+router.post('/registro', mainController.crearUsuario);
 
 module.exports = router;
