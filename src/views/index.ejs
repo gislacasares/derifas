@@ -29,17 +29,30 @@
         <h1>De rifas bienvenidos</h1>
 
         <!--Seccion Novedades-->
-        <%- include('./partials/novedades-productos') %>
+        <h2>Novedades</h2>
+        <div class=flex>
+            <% for(let prod of novedadesProductos){ %>
+                <%- include("./partials/producto",{prod}) %>
+                    <% } %>
 
-            <!--Seccion Ultimas oportunidades-->
-            <%- include('./partials/ultimas-oportunidades') %>
+        </div>
 
-                <!--Seccion categorias-->
-                <section>
-                    <!--Categorias de productos-->
-                    <h2>Categorías</h2>
-                </section>
+        <!--Seccion Ultimas oportunidades-->
+        <h2>Últimas Oportunidades</h2>
+        <div class=flex>
+            <% for(let prod of ultimaOportunidadProductos){ %>
+                <%- include("./partials/producto",{prod}) %>
+                    <% } %>
+
+        </div>
+
+        <!--Seccion categorias-->
+        <section>
+            <!--Categorias de productos-->
+            <h2>Categorías</h2>
+        </section>
     </main>
+
     <footer>
         <!-- footer-->
         <%- include('./partials/footer') %>

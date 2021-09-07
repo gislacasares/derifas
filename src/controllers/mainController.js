@@ -1,9 +1,31 @@
 const path = require('path');
+const fs = require("fs");
+
+//importo el json de productos
+const productosFilePath = path.join(__dirname, "../data/productosDataBase.json");
+const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
+
 
 const controller = {
     index: (req, res) => {
-        //res.sendFile(path.join(__dirname, '../views/index.html')); como ahora usamos EJS, esto deja de tener sentido, se usa lo que sigue
-        return res.render('index');
+        //Creo 2 arrays:
+        // Novedades y ultimas_oportunidades
+
+        const novedadesProductos = productos.filter((prod) => {
+            if (prod.novedad == false) {
+                return prod;
+            }
+
+        });
+        console.log(novedadesProductos);
+
+        const ultimaOportunidadProductos = productos.filter((prod) => {
+            return prod.ultima_oportunidad == true;
+        });
+
+        //renderizar la vista index con esos arrays
+        //res.render('index', { novedadesProductos });
+        res.render('index', { novedadesProductos, ultimaOportunidadProductos });
     },
     registro: (req, res) => {
         res.render('registro');
@@ -16,6 +38,7 @@ const controller = {
     },
     publicar: (req, res) => {
         res.render('crear-publicacion');
+
     }
 };
 

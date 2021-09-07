@@ -1,0 +1,34 @@
+<acticle class="producto">
+    <div class="producto-wrapper">
+        <img src="/img/productos/<%= prod.imagen %>" width="100%" alt="imagen del producto">
+        <div class="producto-content">
+            <div class=flex>
+                <p class="precio-producto">
+                    $
+                    <%=prod.precio%>
+                </p>
+                <p class="precio-cupon">
+                    $
+                    <%= Math.round(prod.precio / prod.total_cupones) %>
+                </p>
+            </div>
+            <div class=flex>
+                <p class=tags-ultimos-cupones>últimos cupones</p>
+                <p class=tags-sale-sale>sale o sale</p>
+            </div>
+            <div class=flex>
+                <p>
+                    <%= prod.cupones_disponibles %> cupones disp.</p>
+                <p>finaliza</p>
+                <p>
+                    <%=prod.fecha_y_hora_limite%>
+                </p>
+            </div>
+            <p class="titulo-producto">
+                <a href="/producto/<%= prod.id %>">
+                    <%=prod.nombre%>
+                </a>
+            </p>
+        </div>
+    </div>
+</acticle>
