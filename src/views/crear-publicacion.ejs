@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Publicación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <!--Logo y banner-->
+        <%- include('./partials/banner') %>
+
+            <!--Barra de Navegación-->
+            <%- include('./partials/nav-bar')%>
+
+
+                <!--Barra de Búsqueda-->
+                <!--Enlaces a redes sociales-->
+    </header>
+    <main>
+        <form method="POST" action="/publicar">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" id="titulo">
+            </br>
+            <label for="precio">Precio de venta</label>
+            <input type="text" name="precio" id="precio">
+            </br>
+            <label for="fechaHoraLimite">Fecha y Hora Límite</label>
+            <input type="date" name="fechaHoraLimite" id="fechaHoraLimite">
+            </br>
+            <label for="totalCupones">Total de Cupones</label>
+            <input type="number" name="totalCupones" id="totalCupones">
+            </br>
+            <label for="descripcion">Descripción</label>
+            <textarea name="descripcion" id="descripcion"></textarea>
+
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+    <footer>
+        <!-- footer-->
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+
+</html>
+
+
+
+"id": 1, "nombre": "Cafetera Moulinex Dolce Gusto Edited", "precio": 1000, "fecha_y_hora_limite": 50, "total_cupones": 100, "cupones_disponibles": 23, "descripcion": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática
+que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o precio.", "imagen": "img-cafetera-moulinex.jpg"

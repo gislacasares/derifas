@@ -9,5 +9,7 @@ router.use('/productos', productosRoutes);
 router.get('/ingreso', mainController.ingreso);
 router.get('/registro', mainController.registro);
 router.post('/registro', mainController.crearUsuario);
+router.get('/publicar', mainController.publicar);
+
 
 module.exports = router;

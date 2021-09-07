@@ -13,6 +13,9 @@ const controller = {
     },
     crearUsuario: (req, res) => {
         res.render(req.body);
+    },
+    publicar: (req, res) => {
+        res.render('crear-publicacion');
     }
 };
 
