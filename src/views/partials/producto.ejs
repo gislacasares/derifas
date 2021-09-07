@@ -1,6 +1,9 @@
 <acticle class="producto">
     <div class="producto-wrapper">
+        <a href="/producto/<%= prod.id %>">
         <img src="/img/productos/<%= prod.imagen %>" width="100%" alt="imagen del producto">
+
+
         <div class="producto-content">
             <div class=flex>
                 <p class="precio-producto">
@@ -25,10 +28,10 @@
                 </p>
             </div>
             <p class="titulo-producto">
-                <a href="/producto/<%= prod.id %>">
-                    <%=prod.nombre%>
-                </a>
+                <%=prod.nombre%>
             </p>
         </div>
+        </a>
+
     </div>
 </acticle>
