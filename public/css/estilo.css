@@ -22,6 +22,7 @@ main {
 .producto {
     width: 25%;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .producto-wrapper {
@@ -73,6 +74,11 @@ main {
 
 /*Formulario*/
 
+form {
+    display: block;
+    margin-top: 0em;
+}
+
 .login-page {
     width: 90%;
     padding: 10px;
@@ -86,11 +92,6 @@ main {
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 10px;
-}
-
-form {
-    display: block;
-    margin-top: 0em;
 }
 
 
