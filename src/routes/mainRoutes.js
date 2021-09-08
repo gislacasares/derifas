@@ -21,8 +21,8 @@ const storage = multer.diskStorage({
 //Ejecución de Multer
 const upload = multer({ storage: storage });
 
-router.get('/', mainController.index);
 
+router.get('/', mainController.index);
 router.use('/producto', productosRoutes);
 router.get('/ingreso', mainController.ingreso);
 router.get('/registro', mainController.registro);

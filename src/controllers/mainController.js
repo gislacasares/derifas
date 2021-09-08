@@ -55,23 +55,17 @@ const controller = {
             "novedad": true,
             "ultima_oportunidad": false
         };
-        console.log(req.file);
 
-        //Convierto el objeto de producto a JSON
-        //const nuevo_producto_JSON = JSON.stringify(nuevo_producto);
-
-        //Grabo el nuevo producto en el archivo de productos
-        //Primero leo todos los productos que ya tengo
-        //Le agrego al array de productos el nuevo producto
+        //Meto el nuevo producto en el array de productos
         productos.push(nuevo_producto);
 
+        //transformo el array de productos a JSON
         productosJSON = JSON.stringify(productos);
 
-
+        //Guardar el nuevo producto escribiendo el archivo de productos con el array JSON
         fs.writeFileSync(productosFilePath, productosJSON);
 
-        //Guardar el nuevo producto
-        //console.log(productos);
+        //Redirecciono a home
         res.redirect('/');
     },
 };
