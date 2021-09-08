@@ -9,12 +9,10 @@ const controller = {
     index: (req, res) => {
         //Creo 2 arrays:
         // Novedades y ultimas_oportunidades
-
         const novedadesProductos = productos.filter((prod) => {
-            if (prod.novedad == false) {
+            if (prod.novedad == true) {
                 return prod;
             }
-
         });
 
         const ultimaOportunidadProductos = productos.filter((prod) => {
@@ -75,7 +73,7 @@ const controller = {
 
         //Guardar el nuevo producto
         //console.log(productos);
-        //res.redirect('/publicar');
+        res.redirect('/');
     },
 };
 
