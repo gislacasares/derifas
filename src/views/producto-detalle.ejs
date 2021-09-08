@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Derifas Home - Bienvenidos</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="/css/estilo.css">
     <link rel="stylesheet" href="/css/estilo-sm.css" media="(min-width:480px)" />
     <link rel="stylesheet" href="/css/estilo-md.css" media="(min-width:768px)" />
     <link rel="stylesheet" href="/css/estilo-lg.css" media="(min-width:1280px)" />
@@ -25,11 +25,11 @@
                 <!--Barra de Búsqueda-->
                 <!--Enlaces a redes sociales-->
     </header>
-
-    <acticle class="producto">
-        <div class="producto-wrapper">
-            <a href="/productos/<%= producto[0].id %>">
-        <img src="/img/productos/<%= producto[0].imagen %>" width="100%" alt="imagen del producto">
+    <section>
+        <acticle class="producto">
+            <div class="producto-wrapper">
+                <a href="/productos/<%= producto[0].id %>">
+        <img src="/img/productos/<%= producto[0].imagen %>" width="50%" alt="imagen del producto">
 
 
         <div class="producto-content">
@@ -61,8 +61,13 @@
         </div>
         </a>
 
-        </div>
-    </acticle>
+            </div>
+        </acticle>
+    </section>
+    <footer>
+        <!-- footer-->
+        <%- include('./partials/footer') %>
+    </footer>
 </body>
 
 </html>
