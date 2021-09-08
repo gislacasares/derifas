@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+
 //agrego las rutas
 const mainRoutes = require('./src/routes/mainRoutes');
 const usuariosroutes = require('./src/routes/usuariosRoutes');
+const productosRoutes = require('./src/routes/productosRoutes');
 
 //Levanto la app localmente en el port 3000 o con el port que me asigne Heroku
 app.listen(process.env.PORT || 3000, () => {
@@ -27,3 +29,4 @@ app.use(express.json());
 //Seteos de endpoints
 app.use('/', mainRoutes);
 app.use('/usuarios', usuariosroutes);
+app.use('/productos', productosRoutes);

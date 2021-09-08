@@ -5,7 +5,7 @@ const productosRoutes = require('./productosRoutes');
 
 router.get('/', mainController.index);
 
-router.use('/productos', productosRoutes);
+router.use('/producto', productosRoutes);
 router.get('/ingreso', mainController.ingreso);
 router.get('/registro', mainController.registro);
 router.post('/registro', mainController.crearUsuario);

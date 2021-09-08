@@ -17,19 +17,19 @@ const controller = {
             }
 
         });
-        console.log(novedadesProductos);
 
         const ultimaOportunidadProductos = productos.filter((prod) => {
             return prod.ultima_oportunidad == true;
         });
 
         //renderizar la vista index con esos arrays
-        //res.render('index', { novedadesProductos });
         res.render('index', { novedadesProductos, ultimaOportunidadProductos });
     },
+
     registro: (req, res) => {
         res.render('registro');
     },
+
     ingreso: (req, res) => {
         return res.send('Ingreso');
     },
