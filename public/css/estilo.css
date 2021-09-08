@@ -1,7 +1,4 @@
 * {
-    /*background-color: rgb(175, 225, 175);*/
-    /*verde esmeralda*/
-    /*background-color: #50C878;*/
     box-sizing: border-box;
 }
 
@@ -71,6 +68,29 @@ main {
 .titulo-producto {
     text-align: center;
     font-size: 1.5rem;
+}
+
+
+/*Formulario*/
+
+.login-page {
+    width: 90%;
+    padding: 10px;
+    margin: 0 5%;
+}
+
+.form {
+    background: #ffffff;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
 }
 
 
