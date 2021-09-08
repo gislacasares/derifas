@@ -25,7 +25,8 @@
     <main>
         <div class="form">
             <div class="login-form">
-                <form method="POST" action="/publicar">
+                <form method="POST" action="/publicar" enctype="multipart/form-data">
+                    <!--Para que envie archivos-->
                     <label for="titulo">Título</label>
                     <input type="text" name="titulo" id="titulo">
                     </br>
@@ -41,7 +42,7 @@
                     <label for="descripcion">Descripción</label>
                     <textarea name="descripcion" id="descripcion"></textarea>
                     </br>
-                    <label for="imagenProducto">Imagen</label>
+                    <label for="imagenProducto">Imagen del Producto</label>
                     <input type="file" name="imagenProducto" id="imagenProducto">
                     </br>
                     <button type="submit">Publicar</button>

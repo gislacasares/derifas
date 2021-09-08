@@ -18,8 +18,7 @@ const controller = {
         const ultimaOportunidadProductos = productos.filter((prod) => {
             return prod.ultima_oportunidad == true;
         });
-        console.log(novedadesProductos);
-        console.log(ultimaOportunidadProductos);
+
         //renderizar la vista index con esos arrays
         res.render('index', { novedadesProductos, ultimaOportunidadProductos });
     },
@@ -52,14 +51,14 @@ const controller = {
             "total_cupones": req.body.totalCupones,
             "cupones_disponibles": req.body.totalCupones,
             "description": req.body.descripcion,
-            "imagen": req.body.imagenProducto,
+            "imagen": req.file.filename,
             "novedad": true,
             "ultima_oportunidad": false
         };
-
+        console.log(req.file);
 
         //Convierto el objeto de producto a JSON
-        const nuevo_producto_JSON = JSON.stringify(nuevo_producto);
+        //const nuevo_producto_JSON = JSON.stringify(nuevo_producto);
 
         //Grabo el nuevo producto en el archivo de productos
         //Primero leo todos los productos que ya tengo
