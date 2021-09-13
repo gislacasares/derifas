@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Derifas Home - Bienvenidos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/estilo.css" />
     <link rel="stylesheet" href="/css/estilo-sm.css" media="(min-width:480px)" />
     <link rel="stylesheet" href="/css/estilo-md.css" media="(min-width:768px)" />
     <link rel="stylesheet" href="/css/estilo-lg.css" media="(min-width:1280px)" />
@@ -21,7 +21,6 @@
             <!--Barra de Navegación-->
             <%- include('./partials/nav-bar')%>
 
-
                 <!--Barra de Búsqueda-->
                 <!--Enlaces a redes sociales-->
     </header>
@@ -30,26 +29,25 @@
 
         <!--Seccion Novedades-->
         <h2>Novedades</h2>
-        <div class=flex>
+        <div class="flex">
             <% for(let prod of novedadesProductos){ %>
-                <%- include("./partials/producto",{prod}) %>
+                <%-
+        include("./partials/producto",{prod}) %>
                     <% } %>
-
         </div>
 
         <!--Seccion Ultimas oportunidades-->
         <h2>Últimas Oportunidades</h2>
-        <div class=flex>
+        <div class="flex">
             <% for(let prod of ultimaOportunidadProductos){ %>
-                <%- include("./partials/producto",{prod}) %>
+                <%-
+        include("./partials/producto",{prod}) %>
                     <% } %>
-
         </div>
 
         <!--Seccion categorias-->
         <section>
             <!--Categorias de productos-->
-            <h2>Categorías</h2>
         </section>
     </main>
 

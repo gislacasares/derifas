@@ -28,19 +28,19 @@
     <section>
         <acticle class="producto">
             <div class="producto-wrapper">
-                <a href="/productos/<%= producto[0].id %>">
-        <img src="/img/productos/<%= producto[0].imagen %>" width="50%" alt="imagen del producto">
+                <a href="/productos/<%= producto.id %>">
+        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto">
 
 
         <div class="producto-content">
             <div class=flex>
                 <p class="precio-producto">
                     $
-                    <%=producto[0].precio%>
+                    <%=producto.precio%>
                 </p>
                 <p class="precio-cupon">
                     $
-                    <%= Math.round(producto[0].precio / producto[0].total_cupones) %>
+                    <%= Math.round(producto.precio / producto.total_cupones) %>
                 </p>
             </div>
             <div class=flex>
@@ -49,17 +49,19 @@
             </div>
             <div class=flex>
                 <p>
-                    <%= producto[0].cupones_disponibles %> cupones disp.</p>
+                    <%= producto.cupones_disponibles %> cupones disp.</p>
                 <p>finaliza</p>
                 <p>
-                    <%=producto[0].fecha_y_hora_limite%>
+                    <%=producto.fecha_y_hora_limite%>
                 </p>
             </div>
             <p class="titulo-producto">
-                <%=producto[0].nombre%>
+                <%=producto.nombre%>
             </p>
-        </div>
-        </a>
+            <p><a href="/producto/modificar/<%= producto.id%>"">Modificar Producto</a>
+                </p>
+            </div>
+            </a>
 
             </div>
         </acticle>
