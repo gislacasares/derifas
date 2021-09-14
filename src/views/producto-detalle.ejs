@@ -27,10 +27,19 @@
     </header>
     <section>
         <acticle class="producto">
-            <div class="producto-wrapper">
-                <a href="/productos/<%= producto.id %>">
-        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto">
+            <div class="container product wrapper">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="products-title">
+                            Detalle del producto:
+                            <%=producto.nombre%>
+                        </h2>
+                    </div>
+                </div>
 
+                <div class="producto-wrapper">
+                    <a href="/productos/<%= producto.id %>">
+        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto">
 
         <div class="producto-content">
             <div class=flex>
@@ -55,14 +64,13 @@
                     <%=producto.fecha_y_hora_limite%>
                 </p>
             </div>
-            <p class="titulo-producto">
-                <%=producto.nombre%>
-            </p>
+            
             <p><a href="/producto/modificar/<%= producto.id%>"">Modificar Producto</a>
-                </p>
-            </div>
-            </a>
+                    </p>
+                </div>
+                </a>
 
+            </div>
             </div>
         </acticle>
     </section>
