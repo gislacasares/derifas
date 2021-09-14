@@ -189,41 +189,5 @@
         "imagen": "img-parlante-sony.jpg",
         "novedad": false,
         "ultima_oportunidad": true
-    },
-    {
-        "id": "17",
-        "nombre": "Yerba La merced",
-        "precio": "500",
-        "fecha_y_hora_limite": "22/12/2021",
-        "total_cupones": "10",
-        "cupones_disponibles": "10",
-        "descripcion": "Yerba la merced, 1 caja",
-        "imagen": "1631568096354_producto.png",
-        "novedad": true,
-        "ultima_oportunidad": false
-    },
-    {
-        "id": "17",
-        "nombre": "Yerba La merced",
-        "precio": "500",
-        "fecha_y_hora_limite": "22/12/2021",
-        "total_cupones": "10",
-        "cupones_disponibles": "10",
-        "descripcion": "Yerba la merced, 1 caja",
-        "imagen": "1631567934533_producto.png",
-        "novedad": true,
-        "ultima_oportunidad": false
-    },
-    {
-        "id": "17",
-        "nombre": "Yerba La merced",
-        "precio": "500",
-        "fecha_y_hora_limite": "22/12/2021",
-        "total_cupones": "10",
-        "cupones_disponibles": "10",
-        "descripcion": "Yerba la merced, 1 caja",
-        "imagen": "1631568096354_producto.png",
-        "novedad": true,
-        "ultima_oportunidad": false
     }
 ]

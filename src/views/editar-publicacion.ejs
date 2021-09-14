@@ -1,62 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Publicación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilo.css">
-</head>
+<!--Incluye el Head-->
+<%- include('./partials/head', {title: 'Modificar Publicación'})%>
 
-<body>
-    <header>
-        <!--Logo y banner-->
-        <%- include('./partials/banner') %>
+    <body>
+        <header>
+            <!--Logo y banner-->
+            <%- include('./partials/banner') %>
 
-            <!--Barra de Navegación-->
-            <%- include('./partials/nav-bar')%>
+                <!--Barra de Navegación-->
+                <%- include('./partials/nav-bar')%>
 
-                <!--Barra de Búsqueda-->
-                <!--Enlaces a redes sociales-->
-    </header>
-    <main>
-        <div class="form">
-            <div class="login-form">
-                <form action="/producto/actualizar/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <!--Para que envie archivos-->
-                    <h3>Estás editando el producto #
-                        <i><%= producto.id %></i>
-                    </h3>
-                    <label for="titulo">Título</label>
-                    <input type="text" name="titulo" id="titulo" value="<%=producto.nombre%>">
-                    </br>
-                    <label for="precio">Precio de venta</label>
-                    <input type="text" name="precio" id="precio " value="<%=producto.precio%>">
-                    </br>
-                    <label for="fechaHoraLimite">Fecha y Hora Límite</label>
-                    <input type="date" name="fechaHoraLimite" id="fechaHoraLimite" value="<%=producto.fecha_y_hora_limite%>">
-                    </br>
-                    <label for="totalCupones">Total de Cupones</label>
-                    <input type="number" name="totalCupones" id="totalCupones" value="<%=producto.total_cupones%>">
-                    </br>
-                    <label for=" descripcion ">Descripción</label>
-                    <textarea name="descripcion" id="descripcion"><%=producto.descripcion%></textarea>
-                    </br>
-                    <label for="imagenProducto">Imagen del Producto</label>
-                    <input type="file" name="imagenProducto" id="imagenProducto">
-                    </br>
+                    <!--Barra de Búsqueda-->
+                    <!--Enlaces a redes sociales-->
+        </header>
+        <main>
+            <div class="form">
+                <div class="login-form">
+                    <form action="/producto/actualizar/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <!--Para que envie archivos-->
+                        <h3>Estás editando el producto #
+                            <i><%= producto.id %></i>
+                        </h3>
+                        <label for="titulo">Título</label>
+                        <input type="text" name="titulo" id="titulo" value="<%=producto.nombre%>">
+                        </br>
+                        <label for="precio">Precio de venta</label>
+                        <input type="text" name="precio" id="precio " value="<%=producto.precio%>">
+                        </br>
+                        <label for="fechaHoraLimite">Fecha y Hora Límite</label>
+                        <input type="date" name="fechaHoraLimite" id="fechaHoraLimite" value="<%=producto.fecha_y_hora_limite%>">
+                        </br>
+                        <label for="totalCupones">Total de Cupones</label>
+                        <input type="number" name="totalCupones" id="totalCupones" value="<%=producto.total_cupones%>">
+                        </br>
+                        <label for=" descripcion ">Descripción</label>
+                        <textarea name="descripcion" id="descripcion"><%=producto.descripcion%></textarea>
+                        </br>
+                        <label for="imagenProducto">Imagen del Producto</label>
+                        <input type="file" name="imagenProducto" id="imagenProducto">
+                        </br>
 
-                    <button type="submit ">Publicar</button>
-                </form>
+                        <button type="submit ">Publicar</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer>
-        <!-- footer-->
+        </main>
+        <footer>
+            <!-- footer-->
 
-    </footer>
-</body>
+        </footer>
+    </body>
 
 </html>
