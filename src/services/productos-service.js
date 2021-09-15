@@ -34,9 +34,22 @@ const productosService = {
         return producto;
     },
 
+    editarUnProducto(id, payload, imagen) {
+        const producto = this.buscarUnProductoPorId(id);
+        //producto.id = req.params.id;
+        producto.nombre = payload.titulo;
+        producto.precio = payload.precio;
+        producto.fecha_y_hora_limite = payload.fecha_y_hora_limite;
+        producto.total_cupones = payload.totalCupones;
+        producto.descripcion = payload.descripcion;
+        producto.imagen = imagen ? imagen.filename : producto.imagen;
+
+        this.save();
+    },
+
     save() {
-        const jsonString = JSON.stringify(products, null, 4);
-        fs.writeFileSync(productsFilePath, jsonString);
+        const jsonString = JSON.stringify(productos, null, 4);
+        fs.writeFileSync(productosFilePath, jsonString);
     },
 
     delete(id) {

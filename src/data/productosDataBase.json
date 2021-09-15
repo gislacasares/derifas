@@ -1,9 +1,9 @@
-[{
+[
+    {
         "id": 1,
         "nombre": "Cafetera Moulinex Dolce Gusto Edited",
-        "precio": 1000,
-        "fecha_y_hora_limite": "18/10/2021",
-        "total_cupones": 100,
+        "precio": "1000",
+        "total_cupones": "100",
         "cupones_disponibles": 23,
         "descripcion": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o precio.",
         "imagen": "img-cafetera-moulinex.jpg",

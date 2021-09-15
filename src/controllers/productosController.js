@@ -6,7 +6,9 @@ const productosService = require("../services/productos-service");
 
 //Creo el controlador
 const controladorProducto = {
+    //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
     //index: mostrar listado de productos
+
     index: (req, res) => {
         const producto = productosService.buscarUnProductoPorId(req.params.id);
 
@@ -57,35 +59,17 @@ const controladorProducto = {
     },
 
     actualizar: (req, res) => {
-        const producto = productosService.buscarUnProductoPorId(req.params.id);
-
-        //edito
-        productoAActualizar.id = req.params.id;
-        productoAActualizar.nombre = req.body.titulo;
-        productoAActualizar.precio = req.body.precio;
-        productoAActualizar.fecha_y_hora_limite = req.body.fecha_y_hora_limite;
-        productoAActualizar.total_cupones = req.body.totalCupones;
-        productoAActualizar.descripcion = req.body.descripcion;
-        productoAActualizar.imagen = req.file ?
-            req.file.filename :
-            productoAActualizar.imagen;
-
-        //Meto el nuevo producto en el array de productos
-        productos.push(productoAActualizar);
-
-        //Guardar el nuevo producto escribiendo el archivo de productos con el array JSON
-        productosService.save();
+        productosService.editarUnProducto(req.params.id, req.body, req.file);
 
         //Redirecciono a home
         res.redirect("/producto/<%= req.params.id %>");
     },
+
     borrar: (req, res) => {
         res.send("a borrar a borrar...");
-        productosService.delete(req.params.id);
+        //productosService.delete(req.params.id);
         res.redirect("/");
     },
-
-    //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
 };
 
 module.exports = controladorProducto;
