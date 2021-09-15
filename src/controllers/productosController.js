@@ -4,22 +4,11 @@ const fs = require("fs");
 //Importo los servicios
 const productosService = require("../services/productos-service");
 
-//importo el json de productos
-const productosFilePath = path.join(
-    __dirname,
-    "../data/productosDataBase.json"
-);
-const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
-
+//Creo el controlador
 const controladorProducto = {
-    //Dentro de este objeto literal va el listado de métodos donde se dará respuesta
     //index: mostrar listado de productos
     index: (req, res) => {
-        const producto = productos.find((prod) => {
-            if (prod.id == req.params.id) {
-                return prod;
-            }
-        });
+        const producto = productosService.buscarUnProductoPorId(req.params.id);
 
         res.render("producto-detalle", { producto: producto });
     },
@@ -53,13 +42,7 @@ const controladorProducto = {
         //Meto el nuevo producto en el array de productos
         productos.push(nuevo_producto);
 
-        /*
-        //transformo el array de productos a JSON
-        productosJSON = JSON.stringify(productos);
-
-        //Guardar el nuevo producto escribiendo el archivo de productos con el array JSON
-        fs.writeFileSync(productosFilePath, productosJSON);
-*/
+        //Guardo el producto en el array de productos
         productosService.save();
 
         //Redirecciono a home
@@ -68,19 +51,13 @@ const controladorProducto = {
 
     //Modificar un producto
     modificar: (req, res) => {
-        //busco el producto a modificar
-        const producto = productos.find((prod) => {
-            if (prod.id == req.params.id) {
-                return prod;
-            }
-        });
+        const producto = productosService.buscarUnProductoPorId(req.params.id);
+
         res.render("editar-publicacion", { producto: producto });
     },
 
     actualizar: (req, res) => {
-        const productoAActualizar = productos.find((prod) => {
-            return prod.id == req.params.id;
-        });
+        const producto = productosService.buscarUnProductoPorId(req.params.id);
 
         //edito
         productoAActualizar.id = req.params.id;
@@ -96,16 +73,17 @@ const controladorProducto = {
         //Meto el nuevo producto en el array de productos
         productos.push(productoAActualizar);
 
-        //transformo el array de productos a JSON
-        productosJSON = JSON.stringify(productos);
-
         //Guardar el nuevo producto escribiendo el archivo de productos con el array JSON
-        fs.writeFileSync(productosFilePath, productosJSON);
+        productosService.save();
 
         //Redirecciono a home
         res.redirect("/producto/<%= req.params.id %>");
     },
-    detalleComentario: function() {},
+    borrar: (req, res) => {
+        res.send("a borrar a borrar...");
+        productosService.delete(req.params.id);
+        res.redirect("/");
+    },
 
     //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
 };

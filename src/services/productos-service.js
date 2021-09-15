@@ -27,9 +27,22 @@ const productosService = {
         return productosUltimaOportunidad;
     },
 
+    buscarUnProductoPorId(id) {
+        const producto = productos.find((prod) => {
+            return prod.id == id;
+        });
+        return producto;
+    },
+
     save() {
         const jsonString = JSON.stringify(products, null, 4);
         fs.writeFileSync(productsFilePath, jsonString);
+    },
+
+    delete(id) {
+        const producto = this.buscarUnProductoPorId(id);
+        producto.delete = true;
+        this.save();
     },
 };
 

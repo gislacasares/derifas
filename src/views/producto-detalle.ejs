@@ -22,7 +22,6 @@
                     <div class="row">
                         <div class="col-12">
                             <h2 class="products-title">
-                                Detalle del producto:
                                 <%=producto.nombre%>
                             </h2>
                         </div>
@@ -57,11 +56,13 @@
             </div>
             
             <p><a href="/producto/modificar/<%= producto.id%>"">Modificar Producto</a>
+                        </a>
+                        </p>
+                        <p>
+                            <a href="/producto/borrar/<%= producto.id%>" ">Borrar Producto</a>
+                        </a>
                         </p>
                     </div>
-                    </a>
-
-                </div>
                 </div>
             </acticle>
         </section>

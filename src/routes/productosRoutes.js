@@ -39,5 +39,8 @@ router.put(
     productosController.actualizar
 );
 
+/*** ELIMINAR UN PRODUCTO ***/
+router.delete("/borrar/:id", productosController.borrar);
+
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;
