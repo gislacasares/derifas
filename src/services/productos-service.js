@@ -13,7 +13,7 @@ const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 const productosService = {
     filtradoPorNovedad() {
         const productosNovedad = productos.filter((prod) => {
-            return prod.novedad == true;
+            return prod.novedad == true && prod.delete == false;
         });
 
         return productosNovedad;
@@ -21,7 +21,7 @@ const productosService = {
 
     filtradoPorUltimaOportunidad(categoria) {
         const productosUltimaOportunidad = productos.filter((prod) => {
-            return prod.ultima_oportunidad == true;
+            return prod.ultima_oportunidad == true && prod.delete == false;
         });
 
         return productosUltimaOportunidad;
@@ -32,6 +32,33 @@ const productosService = {
             return prod.id == id;
         });
         return producto;
+    },
+
+    crearUnProducto(payload, imagen) {
+        const productoMaximoId = Math.max.apply(
+            Math,
+            productos.map(function(o) {
+                return o.id;
+            })
+        );
+        let nuevo_producto = {
+            id: productoMaximoId + 1,
+            nombre: payload.titulo,
+            precio: payload.precio,
+            fecha_y_hora_limite: payload.fechaHoraLimite,
+            total_cupones: payload.totalCupones,
+            cupones_disponibles: payload.totalCupones,
+            descripcion: payload.descripcion,
+            imagen: imagen.filename,
+            novedad: true,
+            ultima_oportunidad: false,
+            delete: false,
+        };
+
+        //Meto el nuevo producto en el array de productos
+        productos.push(nuevo_producto);
+
+        this.save();
     },
 
     editarUnProducto(id, payload, imagen) {

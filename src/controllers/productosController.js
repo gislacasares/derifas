@@ -20,6 +20,7 @@ const controladorProducto = {
     },
 
     crearProducto: (req, res) => {
+        /*
         //Obtengo el maximo id de productos
         let productoMaximoId = Math.max.apply(
             Math,
@@ -46,6 +47,8 @@ const controladorProducto = {
 
         //Guardo el producto en el array de productos
         productosService.save();
+*/
+        productosService.crearUnProducto(req.body, req.file);
 
         //Redirecciono a home
         res.redirect("/");
@@ -62,12 +65,11 @@ const controladorProducto = {
         productosService.editarUnProducto(req.params.id, req.body, req.file);
 
         //Redirecciono a home
-        res.redirect("/producto/<%= req.params.id %>");
+        res.redirect("/producto/mostrar/" + req.params.id);
     },
 
     borrar: (req, res) => {
-        res.send("a borrar a borrar...");
-        //productosService.delete(req.params.id);
+        productosService.delete(req.params.id);
         res.redirect("/");
     },
 };

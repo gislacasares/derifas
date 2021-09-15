@@ -28,41 +28,42 @@
                     </div>
 
                     <div class="producto-wrapper">
-                        <a href="/productos/<%= producto.id %>">
-        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto">
+                        <a href="/productos/<%= producto.id %>"></a>
+                        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto">
 
-        <div class="producto-content">
-            <div class=flex>
-                <p class="precio-producto">
-                    $
-                    <%=producto.precio%>
-                </p>
-                <p class="precio-cupon">
-                    $
-                    <%= Math.round(producto.precio / producto.total_cupones) %>
-                </p>
-            </div>
-            <div class=flex>
-                <p class=tags-ultimos-cupones>últimos cupones</p>
-                <p class=tags-sale-sale>sale o sale</p>
-            </div>
-            <div class=flex>
-                <p>
-                    <%= producto.cupones_disponibles %> cupones disp.</p>
-                <p>finaliza</p>
-                <p>
-                    <%=producto.fecha_y_hora_limite%>
-                </p>
-            </div>
-            
-            <a href="/producto/modificar/<%= producto.id%>"">Modificar Producto</a>
-                        </a>
-                        <p>
-                            <a href="/producto/borrar/<%= producto.id%>" ">Borrar Producto</a>
-                        </a>
-                        </p>
+                        <div class="producto-content">
+                            <div class=flex>
+                                <p class="precio-producto">
+                                    $
+                                    <%=producto.precio%>
+                                </p>
+                                <p class="precio-cupon">
+                                    $
+                                    <%= Math.round(producto.precio / producto.total_cupones) %>
+                                </p>
+                            </div>
+                            <div class=flex>
+                                <p class=tags-ultimos-cupones>últimos cupones</p>
+                                <p class=tags-sale-sale>sale o sale</p>
+                            </div>
+                            <div class=flex>
+                                <p>
+                                    <%= producto.cupones_disponibles %> cupones disp.</p>
+                                <p>finaliza</p>
+                                <p>
+                                    <%=producto.fecha_y_hora_limite%>
+                                </p>
+                            </div>
+
+                            <p>
+                                <a href="/producto/modificar/<%= producto.id%>">Modificar Producto</a>
+                            </p>
+
+                            <form action="/producto/borrar/<%= producto.id %>?_method=delete" method="POST" style="display: inline-flex">
+                                <button type="submit">Borrar Producto</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
             </acticle>
         </section>
         <footer>

@@ -1,5 +1,4 @@
-[
-    {
+[{
         "id": 1,
         "nombre": "Cafetera Moulinex Dolce Gusto Edited",
         "precio": "1000",
@@ -26,16 +25,15 @@
     },
     {
         "id": 3,
-        "nombre": "Samsung Galaxy S10",
-        "precio": 72999,
-        "fecha_y_hora_limite": "5/11/2021",
-        "total_cupones": 150,
+        "nombre": "Samsung Galaxy S11",
+        "precio": "72999",
+        "total_cupones": "150",
         "cupones_disponibles": 50,
         "descripcion": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
         "imagen": "img-samsung-galaxy-s10.jpg",
         "novedad": true,
         "ultima_oportunidad": false,
-        "delete": false
+        "delete": true
     },
     {
         "id": 4,
@@ -67,14 +65,13 @@
         "id": 6,
         "nombre": "Aire Acondicionado 3200w Frio / Calor",
         "descripcion": "AIRE SPLIT 3200W TACA-3200WCHSA/KC FC TCL. Capacidad frio 3200 Watts. Capacidad calor 3300 Watts. Potencia Electrica(W)frio 996. Potencia Electrica(W)calor 1028. Eficiencia energética calor C. Eficiencia energética frio A. Frigorias 2750 UNIDAD INTERIOR. Peso Bruto 10kg. Peso Neto 7 kg",
-        "precio": 20999,
-        "fecha_y_hora_limite": "23/10/2021",
-        "total_cupones": 120,
+        "precio": "20999",
+        "total_cupones": "120",
         "cupones_disponibles": 120,
-        "imagen": "img-aire-acondicionado.jpg",
+        "imagen": "1631736932875_producto.png",
         "novedad": true,
         "ultima_oportunidad": false,
-        "delete": false
+        "delete": true
     },
     {
         "id": 7,
