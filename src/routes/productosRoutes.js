@@ -23,7 +23,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 /*** MOSTRAR UN PRODUCTO ***/
-router.get("/:id", productosController.index);
+router.get("/mostrar/:id", productosController.mostrar);
 
 /*** CREAR UN PRODUCTO ***/
 router.get("/publicar", productosController.publicar);
@@ -42,7 +42,7 @@ router.put(
 );
 
 /*** ELIMINAR UN PRODUCTO ***/
-router.delete("/borrar/1", productosController.borrar);
+router.delete("/borrar/:id", productosController.borrar);
 
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;

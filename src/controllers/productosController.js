@@ -9,7 +9,7 @@ const controladorProducto = {
     //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
     //index: mostrar listado de productos
 
-    index: (req, res) => {
+    mostrar: (req, res) => {
         const producto = productosService.buscarUnProductoPorId(req.params.id);
 
         res.render("producto-detalle", { producto: producto });
