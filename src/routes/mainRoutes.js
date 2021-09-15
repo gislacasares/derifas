@@ -3,8 +3,13 @@ const express = require("express");
 const multer = require("multer");
 const router = express.Router();
 const path = require("path");
-const mainController = require("../controllers/mainController");
+
+//Importo Ruteadores
 const productosRoutes = require("./productosRoutes");
+const usuariosRoutes = require("./usuariosRoutes");
+
+//Importo Controladores
+const mainController = require("../controllers/mainController");
 
 //Configuracion del storare para las imagenes con Multer
 const storage = multer.diskStorage({
@@ -22,16 +27,9 @@ const storage = multer.diskStorage({
 //Ejecución de Multer
 const upload = multer({ storage: storage });
 
+//Ruteo
 router.get("/", mainController.index);
 router.use("/producto", productosRoutes);
-router.get("/ingreso", mainController.ingreso);
-router.get("/registro", mainController.registro);
-router.post("/registro", mainController.crearUsuario);
-router.get("/publicar", mainController.publicar);
-router.post(
-    "/publicar",
-    upload.single("imagenProducto"),
-    mainController.crearProducto
-);
+router.use("/usuarios", usuariosRoutes);
 
 module.exports = router;

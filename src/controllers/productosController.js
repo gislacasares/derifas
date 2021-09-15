@@ -1,6 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 
+//Importo los servicios
+const productosService = require("../services/productos-service");
+
 //importo el json de productos
 const productosFilePath = path.join(
     __dirname,
@@ -20,11 +23,47 @@ const controladorProducto = {
 
         res.render("producto-detalle", { producto: producto });
     },
-    create: function() {},
 
-    //show: mostrar detalles del producto
-    show: (req, res) => {
-        res.send("bienvenidos al detalle del producto");
+    publicar: (req, res) => {
+        res.render("crear-publicacion");
+    },
+
+    crearProducto: (req, res) => {
+        //Obtengo el maximo id de productos
+        let productoMaximoId = Math.max.apply(
+            Math,
+            productos.map(function(o) {
+                return o.id;
+            })
+        );
+
+        let nuevo_producto = {
+            id: productoMaximoId + 1,
+            nombre: req.body.titulo,
+            precio: req.body.precio,
+            fecha_y_hora_limite: req.body.fechaHoraLimite,
+            total_cupones: req.body.totalCupones,
+            cupones_disponibles: req.body.totalCupones,
+            descripcion: req.body.descripcion,
+            imagen: req.file.filename,
+            novedad: true,
+            ultima_oportunidad: false,
+        };
+
+        //Meto el nuevo producto en el array de productos
+        productos.push(nuevo_producto);
+
+        /*
+        //transformo el array de productos a JSON
+        productosJSON = JSON.stringify(productos);
+
+        //Guardar el nuevo producto escribiendo el archivo de productos con el array JSON
+        fs.writeFileSync(productosFilePath, productosJSON);
+*/
+        productosService.save();
+
+        //Redirecciono a home
+        res.redirect("/");
     },
 
     //Modificar un producto
