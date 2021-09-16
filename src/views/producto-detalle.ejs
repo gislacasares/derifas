@@ -66,16 +66,17 @@
                     </div>
                     <div class="grilla-cupones">
                         <!--División con grilla de cupones-->
-                        Acá va la grilla de cupones
-                        <%- include('./partials/grilla-cupones', {productoId: producto.id})%>
-
+                        <section>
+                            <h4>Grilla de cupones</h4>
+                            <%- include('./partials/grilla-cupones', {cuponera})%>
+                                </sections>
                     </div>
             </acticle>
-        </section>
-        <footer>
-            <!-- footer-->
-            <%- include('./partials/footer') %>
-        </footer>
+            </section>
+            <footer>
+                <!-- footer-->
+                <%- include('./partials/footer') %>
+            </footer>
     </body>
 
 </html>

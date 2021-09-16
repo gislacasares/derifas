@@ -3,6 +3,8 @@ const fs = require("fs");
 
 //Importo los servicios
 const productosService = require("../services/productos-service");
+const cuponerasService = require("../services/cupones-service");
+const cuponesService = require("../services/cupones-service");
 
 //Creo el controlador
 const controladorProducto = {
@@ -12,7 +14,13 @@ const controladorProducto = {
     mostrar: (req, res) => {
         const producto = productosService.buscarUnProductoPorId(req.params.id);
 
-        res.render("producto-detalle", { producto: producto });
+        const cuponera = cuponesService.buscarCuponeraPorIdDeProducto(
+            req.params.id
+        );
+
+        console.log(cuponera);
+
+        res.render("producto-detalle", { producto: producto, cuponera: cuponera });
     },
 
     publicar: (req, res) => {

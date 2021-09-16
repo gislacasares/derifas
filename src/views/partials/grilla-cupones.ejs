@@ -1,3 +1,9 @@
-<h3>
-    <%= productoId %> cupones</title>
-</h3>
+<body>
+    <div class="flex">
+        <% for(let cupon of cuponera.usuariosIdCompraCupones){ %>
+            <div class="cupon">
+                <%= cupon.cuponId %>
+            </div>
+            <%}%>
+    </div>
+</body>

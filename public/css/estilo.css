@@ -220,4 +220,13 @@ footer p {
 }
 
 
-/*====== Productos ======*/
+/*====== Cuponera ======*/
+
+.cupon {
+    border: 1px solid #ebebeb;
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+    background-color: #1ABC9C;
+    border-radius: 25px;
+}

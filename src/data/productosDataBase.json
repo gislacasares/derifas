@@ -203,5 +203,18 @@
         "novedad": false,
         "ultima_oportunidad": true,
         "delete": false
+    },
+    {
+        "id": 17,
+        "nombre": "pepe",
+        "precio": 100,
+        "fecha_y_hora_limite": "2011-11-11",
+        "total_cupones": 10,
+        "cupones_disponibles": 10,
+        "descripcion": "pepe",
+        "imagen": "default-image.png",
+        "novedad": true,
+        "ultima_oportunidad": false,
+        "delete": false
     }
 ]

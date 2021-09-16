@@ -49,7 +49,7 @@ const productosService = {
             total_cupones: parseInt(payload.total_cupones),
             cupones_disponibles: parseInt(payload.total_cupones),
             descripcion: payload.descripcion,
-            imagen: imagen.filename,
+            imagen: imagen ? imagen.filename : "default-image.png",
             novedad: true,
             ultima_oportunidad: false,
             delete: false,

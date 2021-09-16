@@ -1,4 +1,29 @@
 [{
     "productoId": 1,
-    "usuariosIdCompraCupones": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    "usuariosIdCompraCupones": [{
+            "cuponId": 1,
+            "usuarioId": 100,
+            "precioCupon": 0
+        },
+        {
+            "cuponId": 2,
+            "usuarioId": 100,
+            "precioCupon": 0
+        },
+        {
+            "cuponId": 3,
+            "usuarioId": 200,
+            "precioCupon": 0
+        },
+        {
+            "cuponId": 4,
+            "usuarioId": 100,
+            "precioCupon": 0
+        },
+        {
+            "cuponId": 5,
+            "usuarioId": 200,
+            "precioCupon": 0
+        }
+    ]
 }]
