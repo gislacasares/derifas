@@ -44,10 +44,10 @@ const productosService = {
         let nuevo_producto = {
             id: productoMaximoId + 1,
             nombre: payload.titulo,
-            precio: payload.precio,
+            precio: parseFloat(payload.precio),
             fecha_y_hora_limite: payload.fechaHoraLimite,
-            total_cupones: payload.totalCupones,
-            cupones_disponibles: payload.totalCupones,
+            total_cupones: parseInt(payload.total_cupones),
+            cupones_disponibles: parseInt(payload.total_cupones),
             descripcion: payload.descripcion,
             imagen: imagen.filename,
             novedad: true,

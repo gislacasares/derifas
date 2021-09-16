@@ -20,34 +20,6 @@ const controladorProducto = {
     },
 
     crearProducto: (req, res) => {
-        /*
-        //Obtengo el maximo id de productos
-        let productoMaximoId = Math.max.apply(
-            Math,
-            productos.map(function(o) {
-                return o.id;
-            })
-        );
-
-        let nuevo_producto = {
-            id: productoMaximoId + 1,
-            nombre: req.body.titulo,
-            precio: req.body.precio,
-            fecha_y_hora_limite: req.body.fechaHoraLimite,
-            total_cupones: req.body.totalCupones,
-            cupones_disponibles: req.body.totalCupones,
-            descripcion: req.body.descripcion,
-            imagen: req.file.filename,
-            novedad: true,
-            ultima_oportunidad: false,
-        };
-
-        //Meto el nuevo producto en el array de productos
-        productos.push(nuevo_producto);
-
-        //Guardo el producto en el array de productos
-        productosService.save();
-*/
         productosService.crearUnProducto(req.body, req.file);
 
         //Redirecciono a home
