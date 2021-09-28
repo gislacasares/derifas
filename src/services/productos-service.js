@@ -33,16 +33,25 @@ const productosService = {
         });
         return producto;
     },
-
-    crearUnProducto(payload, imagen) {
+    productoMaximoId() {
         const productoMaximoId = Math.max.apply(
             Math,
             productos.map(function(o) {
                 return o.id;
             })
         );
+        return productoMaximoId;
+    },
+
+    crearUnProducto(payload, imagen) {
+        /*const productoMaximoId = Math.max.apply(
+                        Math,
+                        productos.map(function(o) {
+                            return o.id;
+                        })
+                    );*/
         let nuevo_producto = {
-            id: productoMaximoId + 1,
+            id: this.productoMaximoId() + 1,
             nombre: payload.titulo,
             precio: parseFloat(payload.precio),
             fecha_y_hora_limite: payload.fechaHoraLimite,
@@ -59,6 +68,7 @@ const productosService = {
         productos.push(nuevo_producto);
 
         this.save();
+        return nuevo_producto.id;
     },
 
     editarUnProducto(id, payload, imagen) {

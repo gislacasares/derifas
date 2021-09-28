@@ -11,6 +11,9 @@ const usuariosRoutes = require("./usuariosRoutes");
 //Importo Controladores
 const mainController = require("../controllers/mainController");
 
+//Importo Middlewares
+const logDBMiddleware = require("../middlewares/logDBMiddleware");
+
 //Configuracion del storare para las imagenes con Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -28,8 +31,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //Ruteo
-router.get("/", mainController.index);
-router.use("/producto", productosRoutes);
-router.use("/usuarios", usuariosRoutes);
+router.get("/", logDBMiddleware, mainController.index);
+router.use("/producto", logDBMiddleware, productosRoutes);
+router.use("/usuarios", logDBMiddleware, usuariosRoutes);
 
 module.exports = router;

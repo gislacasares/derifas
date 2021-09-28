@@ -1,29 +1,564 @@
 [{
-    "productoId": 1,
-    "usuariosIdCompraCupones": [{
-            "cuponId": 1,
-            "usuarioId": 100,
-            "precioCupon": 0
-        },
-        {
-            "cuponId": 2,
-            "usuarioId": 100,
-            "precioCupon": 0
-        },
-        {
-            "cuponId": 3,
-            "usuarioId": 200,
-            "precioCupon": 0
-        },
-        {
-            "cuponId": 4,
-            "usuarioId": 100,
-            "precioCupon": 0
-        },
-        {
-            "cuponId": 5,
-            "usuarioId": 200,
-            "precioCupon": 0
-        }
-    ]
-}]
+        "productoId": 1,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 2,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 3,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 4,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 5,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 6,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 7,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 8,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            }
+        ]
+    },
+    {
+        "productoId": 9,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 10,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 11,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 12,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 13,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 14,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 15,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 16,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    },
+    {
+        "productoId": 17,
+        "usuariosIdCompraCupones": [{
+                "cuponId": 1,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 2,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 3,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 4,
+                "usuarioId": 100,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 5,
+                "usuarioId": 200,
+                "precioCupon": 0
+            },
+            {
+                "cuponId": 6,
+                "usuarioId": 100,
+                "precioCupon": 10
+            }
+        ]
+    }
+]

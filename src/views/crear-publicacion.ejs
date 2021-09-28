@@ -18,33 +18,39 @@
         <main>
             <div class="form">
                 <div class="login-form">
-                    <form method="POST" action="/producto/publicar" enctype="multipart/form-data">
-                        <!--Para que envie archivos-->
-                        <label for="titulo">Título</label>
-                        <input type="text" name="titulo" id="titulo">
-                        </br>
-                        <label for="precio">Precio de venta</label>
-                        <input type="text" name="precio" id="precio">
-                        </br>
-                        <label for="fechaHoraLimite">Fecha y Hora Límite</label>
-                        <input type="date" name="fechaHoraLimite" id="fechaHoraLimite">
-                        </br>
-                        <label for="total_cupones">Total Cupones</label>
-                        <select name="total_cupones" id="total_cupones">
+                    <!--Imprimo la lista de errores-->
+                    <% if(locals.errors) { %>
+                        <p>
+                            <%= errors %>
+                        </p>
+                        <% } %>
+                            <form method="POST" action="/producto/publicar" enctype="multipart/form-data">
+                                <!--Para que envie archivos-->
+                                <label for="titulo">Título</label>
+                                <input type="text" name="titulo" id="titulo">
+                                </br>
+                                <label for="precio">Precio de venta</label>
+                                <input type="text" name="precio" id="precio">
+                                </br>
+                                <label for="fechaHoraLimite">Fecha y Hora Límite</label>
+                                <input type="date" name="fechaHoraLimite" id="fechaHoraLimite">
+                                </br>
+                                <label for="total_cupones">Total Cupones</label>
+                                <select name="total_cupones" id="total_cupones">
                             <option value="10">10</option>
                             <option value="25">25</option>
                             <option value="50">50</option>
                             <option value="100">100</option>
                         </select>
-                        </br>>
-                        <label for="descripcion">Descripción</label>
-                        <textarea name="descripcion" id="descripcion"></textarea>
-                        </br>
-                        <label for="imagenProducto">Imagen del Producto</label>
-                        <input type="file" name="imagenProducto" id="imagenProducto">
-                        </br>
-                        <button type="submit">Publicar</button>
-                    </form>
+                                </br>>
+                                <label for="descripcion">Descripción</label>
+                                <textarea name="descripcion" id="descripcion"></textarea>
+                                </br>
+                                <label for="imagenProducto">Imagen del Producto</label>
+                                <input type="file" name="imagenProducto" id="imagenProducto">
+                                </br>
+                                <button type="submit">Publicar</button>
+                            </form>
                 </div>
             </div>
         </main>

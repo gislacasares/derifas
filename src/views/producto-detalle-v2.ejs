@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--Incluye el Head-->
+<%- include('./partials/head', {title: 'Detalle de Publicación'})%>
+
+    <body>
+        <header>
+            <!--Logo y banner-->
+            <%- include('./partials/banner') %>
+
+                <!--Barra de Navegación-->
+                <%- include('./partials/nav-bar')%>
+
+                    <!--Barra de Búsqueda-->
+                    <!--Enlaces a redes sociales-->
+        </header>
+        <!-- product detail -->
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="w">Detalle del producto:
+                        <%= producto.nombre %>
+                    </h2>
+                </div>
+            </div>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <img src="/img/productos/<%= producto.imagen %>" width="50%" alt="imagen del producto" class="product-detail-img" />
+                        <p class="product-detail-description">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                            recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="product-detail-info">
+                            <h2 class="product-detail-title">producto.nombre</h2>
+
+                            <p class="product-detail-price">$
+                                <%=producto.precio%>
+                            </p>
+
+                            <ul class="actions-list">
+                                <li>
+                                    <i class="fas fa-credit-card"></i>
+                                    <p>Pagá en 12 cuotas sin interes</p>
+                                </li>
+                                <li>
+                                    <i class="fas fa-store"></i>
+                                    <p>Retiro gratis en locales del vendedor</p>
+                                </li>
+                            </ul>
+
+                            <a href="#" class="buy-now-button">COMPRAR AHORA</a>
+                            <hr />
+
+                            <a href="/products/edit/9" class="action-button edit">EDITAR PRODUCTO</a
+              >
+              <form
+                action="/products/0?_method=delete"
+                method="POST"
+                style="display: inline-flex"
+              >
+                <button type="submit" class="action-button delete">
+                  ELIMINAR
+                </button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grilla-cupones" width="50%">
+      <!--División con grilla de cupones-->
+      <section>
+          <h4>Grilla de cupones</h4>
+          <%- include('./partials/grilla-cupones', {cuponera})%>
+          </sections>
+  </div>
+    <footer>
+      <!-- footer-->
+      <%- include('./partials/footer') %>
+    </footer>
+  </body>
+</html>
