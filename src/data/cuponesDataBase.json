@@ -2,7 +2,7 @@
         "productoId": 1,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -22,7 +22,7 @@
             },
             {
                 "cuponId": 5,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -46,7 +46,7 @@
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -61,7 +61,7 @@
             },
             {
                 "cuponId": 6,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 10
             }
         ]
@@ -70,12 +70,12 @@
         "productoId": 3,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -104,7 +104,7 @@
         "productoId": 4,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -124,7 +124,7 @@
             },
             {
                 "cuponId": 5,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -143,7 +143,7 @@
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -158,7 +158,7 @@
             },
             {
                 "cuponId": 5,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -182,12 +182,12 @@
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 4,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -206,12 +206,12 @@
         "productoId": 7,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -250,7 +250,7 @@
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             }
         ]
@@ -264,7 +264,7 @@
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -293,17 +293,17 @@
         "productoId": 10,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -371,7 +371,7 @@
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -395,7 +395,7 @@
         "productoId": 13,
         "usuariosIdCompraCupones": [{
                 "cuponId": 1,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -434,17 +434,17 @@
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
                 "cuponId": 4,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -473,7 +473,7 @@
             },
             {
                 "cuponId": 3,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -483,7 +483,7 @@
             },
             {
                 "cuponId": 5,
-                "usuarioId": 200,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -502,7 +502,7 @@
             },
             {
                 "cuponId": 2,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -512,7 +512,7 @@
             },
             {
                 "cuponId": 4,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -546,7 +546,7 @@
             },
             {
                 "cuponId": 4,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 0
             },
             {
@@ -556,7 +556,7 @@
             },
             {
                 "cuponId": 6,
-                "usuarioId": 100,
+                "usuarioId": 0,
                 "precioCupon": 10
             }
         ]

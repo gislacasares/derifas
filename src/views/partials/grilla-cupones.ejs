@@ -1,9 +1,27 @@
+<head>
+    <link rel="stylesheet" href="/css/cuponera.css" />
+</head>
+
 <body>
     <div class="flex" width="50%">
         <% for(let cupon of cuponera.usuariosIdCompraCupones){ %>
-            <div class="cupon">
-                <%= cupon.cuponId %>
-            </div>
-            <%}%>
-    </div>
+            <% if(cupon.usuarioId == 0) {%>
+                <div class="cuponDisponible">
+                    <% }else{%>
+                        <div class="cuponVendido">
+                            <%}%>
+                                Cupón:
+                                <%= cupon.cuponId %>
+                                    </br>
+                                    Precio: $
+                                    <%= cupon.precioCupon %>
+                                        </br>
+                                        <% if(cupon.usuarioId == 0) {%>
+                                            Disponible
+                                            <% }else{%>
+                                                Vendido
+                                                <%}%>
+                        </div>
+                        <%}%>
+                </div>
 </body>

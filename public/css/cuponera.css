@@ -1,3 +1,20 @@
-.cupon {
-    border: 1px;
+/*====== Cuponera ======*/
+
+.cuponDisponible {
+    border: 1px solid #ebebeb;
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+    background-color: #1abc9c;
+    border-radius: 25px;
+}
+
+.cuponVendido {
+    border: 1px solid #ebebeb;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    width: 25%;
+    background-color: #bc1a1a;
+    border-radius: 25px;
 }
