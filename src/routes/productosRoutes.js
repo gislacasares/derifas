@@ -47,7 +47,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 /*** MOSTRAR UN PRODUCTO ***/
-//router.get("/mostrar/:id", logDBMiddleware, productosController.mostrar);
+//router.get("/mostrar/:id", logDBMiddleware, productosController.mostrar); //version sin cuponera
 router.get("/mostrar_v2/:id", logDBMiddleware, productosController.mostrar_v2);
 
 /*** CREAR UN PRODUCTO ***/
