@@ -3,11 +3,11 @@ const fs = require("fs");
 
 //Importo los servicios
 const productosService = require("../services/productos-service");
-const cuponerasService = require("../services/cupones-service");
 const cuponesService = require("../services/cupones-service");
 
 //Importo las validaciones
 const { body, validationResult } = require("express-validator");
+const usuariosService = require("../services/usuarios-service");
 
 //Creo el controlador
 const controladorProducto = {
@@ -28,8 +28,6 @@ const controladorProducto = {
     mostrar_v2: (req, res) => {
         const producto = productosService.buscarUnProductoPorId(req.params.id);
         const cuponera = cuponesService.buscarCuponeraPorIdDeProducto(producto.id);
-
-        console.log(cuponera);
 
         res.render("producto-detalle-v2", {
             producto: producto,
@@ -52,6 +50,11 @@ const controladorProducto = {
             //return res.status(400).json({ errors: errors.array() });
             res.redirect("crear-publicacion", { errors: errors.array() });
         }
+    },
+
+    createOneProduct: (req, res) => {
+        productosService.createOneProduct(req.body, req.file);
+        res.redirect("/");
     },
 
     //Modificar un producto

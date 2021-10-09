@@ -1,6 +1,5 @@
 const path = require("path");
-//Importo para usar la DB
-const db = require("../../database/models");
+const usuariosService = require("../services/usuarios-service");
 
 const usuariosController = {
     //Dentro de este objeto literal va el listado de métodos donde se dará respuesta
@@ -21,18 +20,19 @@ const usuariosController = {
         return res.send("View para ingreso de usuario");
     },
     crearUsuario: (req, res) => {
-        //console.log(db);
-
-        db.Usuarios.create({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            password: req.body.password,
-            fecha_nacimiento: req.body.fechaNacimiento,
-            email: req.body.email,
-            telefono: req.body.telefono,
-        });
-
+        usuariosService.create(req.body);
+        /*db.Usuarios.create({
+                                                    nombre: req.body.nombre,
+                                                    apellido: req.body.apellido,
+                                                    password: req.body.password,
+                                                    fecha_nacimiento: req.body.fechaNacimiento,
+                                                    email: req.body.email,
+                                                    telefono: req.body.telefono,
+                                                });*/
         res.redirect("/");
+    },
+    list: (req, res) => {
+        res.send("usuariosService.list");
     },
 };
 

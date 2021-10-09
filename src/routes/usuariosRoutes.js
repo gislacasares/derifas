@@ -9,6 +9,7 @@ const usuariosController = require("../controllers/usuariosController");
 router.get("/registro", logDBMiddleware, usuariosController.registro);
 router.post("/registro", logDBMiddleware, usuariosController.crearUsuario);
 router.get("/ingresar", logDBMiddleware, usuariosController.ingresar);
+router.get("/listar", logDBMiddleware, usuariosController.list);
 
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;

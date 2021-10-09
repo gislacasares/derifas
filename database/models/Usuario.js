@@ -24,7 +24,18 @@ module.exports = (sequelize, dataTypes) => {
         telefono: {
             type: dataTypes.STRING(50),
         },
+        activo: {
+            type: dataTypes.BOOLEAN,
+        },
+        ultimo_acceso: {
+            type: dataTypes.DATE,
+        },
+        fecha_creacion: {
+            type: dataTypes.DATE,
+            allowNull: false,
+        },
     };
+
     let config = {
         tableName: "Usuarios",
         timestamps: false,

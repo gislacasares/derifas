@@ -58,7 +58,8 @@ router.post(
     upload.single("imagenProducto"),
     logDBMiddleware,
     validateCreacionProductoForm,
-    productosController.crearProducto
+    //productosController.crearProducto
+    productosController.createOneProduct
 );
 
 /*** EDITAR UN PRODUCTO ***/

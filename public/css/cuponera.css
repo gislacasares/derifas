@@ -1,5 +1,10 @@
 /*====== Cuponera ======*/
 
+.contenedorCuponera {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .cuponDisponible {
     border: 1px solid #ebebeb;
     text-align: center;

@@ -1,6 +1,9 @@
 const path = require("path");
 const fs = require("fs");
 
+//Importo para usar la DB
+const db = require("../../database/models");
+
 //importo el json de productos
 const productosFilePath = path.join(
     __dirname,
@@ -44,12 +47,6 @@ const productosService = {
     },
 
     crearUnProducto(payload, imagen) {
-        /*const productoMaximoId = Math.max.apply(
-                        Math,
-                        productos.map(function(o) {
-                            return o.id;
-                        })
-                    );*/
         let nuevo_producto = {
             id: this.productoMaximoId() + 1,
             nombre: payload.titulo,
@@ -93,6 +90,24 @@ const productosService = {
         const producto = this.buscarUnProductoPorId(id);
         producto.delete = true;
         this.save();
+    },
+
+    createOneProduct(payload, imagen) {
+        db.Productos.create({
+            usuario_id: 5,
+            estado_producto: payload.estado_producto,
+            nombre: payload.titulo,
+            precio: payload.precio,
+            fecha_hora_limite: payload.fechaHoraLimite,
+            total_cupones: payload.total_cupones,
+            cupones_disponibles: payload.total_cupones,
+            descripcion: payload.descripcion,
+            imagen: imagen ? imagen.filename : "default-image.png",
+            novedad: 1,
+            ultima_oportunidad: 0,
+            activo: 1,
+            fecha_creacion: Date.now(),
+        });
     },
 };
 
