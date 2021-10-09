@@ -10,25 +10,21 @@ const productosFilePath = path.join(
 const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 
 const controller = {
-    index: (req, res) => {
-        //Creo 2 arrays:
+    index: async(req, res) => {
+        const novedadesProductos = await productosService.filtradoPorNovedad();
 
+        //Creo 2 arrays:
         // Productos Novedad
-        const novedadesProductos = productosService.filtradoPorNovedad();
-        /*const novedadesProductos = productos.filter((prod) => {
-                        if (prod.novedad == true) {
-                            return prod;
-                        }
-                    });
-                    */
+
+        //const novedadesProductos = productosService.filtradoPorNovedad();
 
         //Productos Ultima oportunidad
         const ultimaOportunidadProductos =
             productosService.filtradoPorUltimaOportunidad();
 
         /*const ultimaOportunidadProductos = productos.filter((prod) => {
-                    return prod.ultima_oportunidad == true;
-                });*/
+                                                    return prod.ultima_oportunidad == true;
+                                                });*/
 
         //renderizar la vista index con esos arrays
         res.render("index", { novedadesProductos, ultimaOportunidadProductos });

@@ -14,12 +14,24 @@ const productosFilePath = path.join(
 const productos = JSON.parse(fs.readFileSync(productosFilePath, "utf-8"));
 
 const productosService = {
-    filtradoPorNovedad() {
-        const productosNovedad = productos.filter((prod) => {
-            return prod.novedad == true && prod.delete == false;
+    filtradoPorNovedad: async() => {
+        const productosNovedad = await db.Productos.findAll({
+            where: {
+                novedad: 1,
+                activo: 1,
+            },
+            order: [
+                ["fecha_creacion", "DESC"]
+            ],
         });
-
         return productosNovedad;
+        /*
+                                        const productosNovedad = productos.filter((prod) => {
+                                            return prod.novedad == true && prod.delete == false;
+                                        });
+
+                                        return productosNovedad;
+                                        */
     },
 
     filtradoPorUltimaOportunidad(categoria) {
