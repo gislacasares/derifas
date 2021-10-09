@@ -25,19 +25,21 @@ const productosService = {
             ],
         });
         return productosNovedad;
-        /*
-                                        const productosNovedad = productos.filter((prod) => {
-                                            return prod.novedad == true && prod.delete == false;
-                                        });
-
-                                        return productosNovedad;
-                                        */
     },
 
-    filtradoPorUltimaOportunidad(categoria) {
-        const productosUltimaOportunidad = productos.filter((prod) => {
-            return prod.ultima_oportunidad == true && prod.delete == false;
+    filtradoPorUltimaOportunidad: async() => {
+        const productosUltimaOportunidad = await db.Productos.findAll({
+            where: {
+                ultima_oportunidad: 1,
+                activo: 1,
+            },
+            order: [
+                ["fecha_hora_limite", "DESC"]
+            ],
         });
+        /*const productosUltimaOportunidad = productos.filter((prod) => {
+                    return prod.ultima_oportunidad == true && prod.delete == false;
+                });*/
 
         return productosUltimaOportunidad;
     },
