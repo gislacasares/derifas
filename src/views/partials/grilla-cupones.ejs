@@ -10,17 +10,21 @@
                     <% }else{%>
                         <div class="cuponVendido">
                             <%}%>
-                                Cupón:
-                                <%= cupon.cuponId %>
-                                    </br>
+                                <div>
+                                    Cupón:
+                                    <%= cupon.cuponId %>
+                                </div>
+                                <div>
                                     Precio: $
                                     <%= cupon.precioCupon %>
-                                        </br>
-                                        <% if(cupon.usuarioId == 0) {%>
-                                            Disponible
-                                            <% }else{%>
-                                                Vendido
-                                                <%}%>
+                                </div>
+                                <div>
+                                    <% if(cupon.usuarioId == 0) {%>
+                                        Disponible
+                                        <% }else{%>
+                                            Vendido
+                                            <%}%>
+                                </div>
                         </div>
                         <%}%>
                 </div>
