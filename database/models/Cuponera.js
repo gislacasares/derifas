@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "Cuponera",
-        timestamps: false,
+        timestamps: true,
         createdAt: "fecha_creacion",
         updatedAt: "fecha_modificacion",
     };

@@ -17,24 +17,24 @@ const cuponesService = {
 
     //create
     /*createCuponera: (payload, productoId) => {
-                                              //creo el array de cupones
-                                              const cupones = [];
-                                              for (let i = 1; i <= payload.total_cupones; i++) {
-                                                  const cupon = {
-                                                      cuponId: i,
-                                                      usuarioId: null,
-                                                  };
-                                                  cupones.push(cupon);
-                                              }
-                                              const cuponera = [{
-                                                  productoId: productoId,
-                                                  usuariosIdCompraCupones: cupones,
-                                              }, ];
+                                                //creo el array de cupones
+                                                const cupones = [];
+                                                for (let i = 1; i <= payload.total_cupones; i++) {
+                                                    const cupon = {
+                                                        cuponId: i,
+                                                        usuarioId: null,
+                                                    };
+                                                    cupones.push(cupon);
+                                                }
+                                                const cuponera = [{
+                                                    productoId: productoId,
+                                                    usuariosIdCompraCupones: cupones,
+                                                }, ];
 
-                                              cupones.push(cuponera);
+                                                cupones.push(cuponera);
 
-                                              save();
-                                          },*/
+                                                save();
+                                            },*/
 
     createCuponera: async(producto_id, precio_producto, total_cupones) => {
         const precio_cupon = precio_producto / total_cupones;
@@ -59,6 +59,10 @@ const cuponesService = {
             where: {
                 producto_id: producto_id,
             },
+            order: [
+                ["vendido", "ASC"],
+                ["numero_cupon", "ASC"],
+            ],
         });
         console.log(cuponera);
         return cuponera;

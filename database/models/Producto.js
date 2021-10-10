@@ -23,6 +23,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.FLOAT,
             allowNull: false,
         },
+        tipo_publicacion: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+        },
+
         fecha_hora_limite: {
             type: dataTypes.DATE,
             allowNull: false,
@@ -55,10 +60,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
+
         /*fecha_creacion: {
-                type: dataTypes.DATE,
-                allowNull: false,
-            },*/
+                                type: dataTypes.DATE,
+                                allowNull: false,
+                            },*/
     };
 
     let config = {

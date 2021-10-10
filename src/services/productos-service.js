@@ -38,8 +38,8 @@ const productosService = {
             ],
         });
         /*const productosUltimaOportunidad = productos.filter((prod) => {
-                                                                                                    return prod.ultima_oportunidad == true && prod.delete == false;
-                                                                                                });*/
+                                                                                                        return prod.ultima_oportunidad == true && prod.delete == false;
+                                                                                                    });*/
 
         return productosUltimaOportunidad;
     },
@@ -50,6 +50,7 @@ const productosService = {
             estado_producto: payload.estado_producto,
             nombre: payload.titulo,
             precio: payload.precio,
+            tipo_publicacion: payload.tipo_publicacion,
             fecha_hora_limite: payload.fechaHoraLimite,
             total_cupones: payload.total_cupones,
             cupones_disponibles: payload.total_cupones,
