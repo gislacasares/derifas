@@ -38,10 +38,35 @@ const productosService = {
             ],
         });
         /*const productosUltimaOportunidad = productos.filter((prod) => {
-                    return prod.ultima_oportunidad == true && prod.delete == false;
-                });*/
+                                                                                                    return prod.ultima_oportunidad == true && prod.delete == false;
+                                                                                                });*/
 
         return productosUltimaOportunidad;
+    },
+
+    createOneProduct: async(payload, imagen) => {
+        const prod = await db.Productos.create({
+            usuario_id: 5,
+            estado_producto: payload.estado_producto,
+            nombre: payload.titulo,
+            precio: payload.precio,
+            fecha_hora_limite: payload.fechaHoraLimite,
+            total_cupones: payload.total_cupones,
+            cupones_disponibles: payload.total_cupones,
+            descripcion: payload.descripcion,
+            imagen: imagen ? imagen.filename : "default-image.png",
+            novedad: 1,
+            ultima_oportunidad: 0,
+            activo: 1,
+            fecha_creacion: Date.now(),
+        });
+
+        return prod.id;
+    },
+
+    findOneProduct: async(id_producto) => {
+        const producto = await db.Productos.findByPk(id_producto);
+        return producto;
     },
 
     buscarUnProductoPorId(id) {
@@ -104,24 +129,6 @@ const productosService = {
         const producto = this.buscarUnProductoPorId(id);
         producto.delete = true;
         this.save();
-    },
-
-    createOneProduct(payload, imagen) {
-        db.Productos.create({
-            usuario_id: 5,
-            estado_producto: payload.estado_producto,
-            nombre: payload.titulo,
-            precio: payload.precio,
-            fecha_hora_limite: payload.fechaHoraLimite,
-            total_cupones: payload.total_cupones,
-            cupones_disponibles: payload.total_cupones,
-            descripcion: payload.descripcion,
-            imagen: imagen ? imagen.filename : "default-image.png",
-            novedad: 1,
-            ultima_oportunidad: 0,
-            activo: 1,
-            fecha_creacion: Date.now(),
-        });
     },
 };
 

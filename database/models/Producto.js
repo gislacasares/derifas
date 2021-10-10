@@ -55,6 +55,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
+        /*fecha_creacion: {
+                type: dataTypes.DATE,
+                allowNull: false,
+            },*/
     };
 
     let config = {

@@ -1,5 +1,5 @@
 [{
-    "productoId": 1,
+    "productoId": 125,
     "usuariosIdCompraCupones": [{
             "cuponId": 1,
             "usuarioId": 100,

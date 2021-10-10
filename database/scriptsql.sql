@@ -34,16 +34,22 @@ CREATE TABLE Productos(
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
 
-CREATE TABLE cupones_vendidos(
+CREATE TABLE cuponera(
 	id INT NOT NULL AUTO_INCREMENT,
     producto_id INT NOT NULL,
-    usuario_id INT NOT NULL,
+    numero_cupon INT NOT NULL,
+    estado TINYINT,
+    vendido TINYINT,
+    usuario_comprador_id INT NULL,
     precio_cupon FLOAT NOT NULL,
-    fecha_creacion DATE,
+    fecha_compra DATE NULL,
+    fecha_creacion DATE NOT NULL,
+    fecha_modificacion DATE NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (producto_id) REFERENCES productos(id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    FOREIGN KEY (producto_id) REFERENCES productos(id)
 );
+
+ALTER TABLE cuponera AUTO_INCREMENT=1;
 
 /*** SCRIPT CARGA DE PRODUCTOS ***/
 INSERT INTO productos (usuario_id, estado_producto, nombre, precio, fecha_hora_limite, total_cupones, cupones_disponibles, descripcion, imagen, novedad, ultima_oportunidad, activo)

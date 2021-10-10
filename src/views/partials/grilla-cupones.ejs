@@ -4,22 +4,22 @@
 
 <body>
     <div class="contenedorCuponera" width="50px">
-        <% for(let cupon of cuponera.usuariosIdCompraCupones){ %>
-            <% if(cupon.usuarioId == 0) {%>
+        <% for(let cupon of cuponera){ %>
+            <% if(cupon.vendido == 0) {%>
                 <div class="cuponDisponible">
                     <% }else{%>
                         <div class="cuponVendido">
                             <%}%>
                                 <div>
                                     Cupón:
-                                    <%= cupon.cuponId %>
+                                    <%= cupon.numero_cupon %>
                                 </div>
                                 <div>
                                     Precio: $
-                                    <%= cupon.precioCupon %>
+                                    <%= cupon.precio_cupon %>
                                 </div>
                                 <div>
-                                    <% if(cupon.usuarioId == 0) {%>
+                                    <% if(cupon.vendido == 0) {%>
                                         Disponible
                                         <% }else{%>
                                             Vendido
