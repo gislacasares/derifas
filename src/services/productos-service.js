@@ -21,9 +21,10 @@ const productosService = {
                 activo: 1,
             },
             order: [
-                ["fecha_creacion", "DESC"]
+                ["id", "DESC"]
             ],
         });
+        //console.log(productosNovedad);
         return productosNovedad;
     },
 
@@ -34,7 +35,7 @@ const productosService = {
                 activo: 1,
             },
             order: [
-                ["fecha_hora_limite", "DESC"]
+                ["id", "DESC"]
             ],
         });
 
@@ -66,9 +67,9 @@ const productosService = {
         const producto = await db.Productos.findByPk(
             id_producto
             /*, {
-                             //Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
-                             include: [{ associate: "tipoPublicacion" }],
-                         }*/
+                                               //Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
+                                               include: [{ associate: "tipoPublicacion" }],
+                                           }*/
         );
         //const tipo_publicacion =
 
