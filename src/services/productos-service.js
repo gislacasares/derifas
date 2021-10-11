@@ -37,9 +37,6 @@ const productosService = {
                 ["fecha_hora_limite", "DESC"]
             ],
         });
-        /*const productosUltimaOportunidad = productos.filter((prod) => {
-                                                                                                        return prod.ultima_oportunidad == true && prod.delete == false;
-                                                                                                    });*/
 
         return productosUltimaOportunidad;
     },
@@ -66,7 +63,15 @@ const productosService = {
     },
 
     findOneProduct: async(id_producto) => {
-        const producto = await db.Productos.findByPk(id_producto);
+        const producto = await db.Productos.findByPk(
+            id_producto
+            /*, {
+                             //Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
+                             include: [{ associate: "tipoPublicacion" }],
+                         }*/
+        );
+        //const tipo_publicacion =
+
         return producto;
     },
 

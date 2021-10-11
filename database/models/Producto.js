@@ -60,11 +60,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BOOLEAN,
             allowNull: false,
         },
-
-        /*fecha_creacion: {
-                                type: dataTypes.DATE,
-                                allowNull: false,
-                            },*/
     };
 
     let config = {
@@ -72,7 +67,16 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const Producto = sequelize.define(alias, cols, config);
+    let Producto = sequelize.define(alias, cols, config);
+
+    //establezco relacion con Productos: tipo_publicacion tiene muchos productos
+    Producto.associate = function(models) {
+        //Models.Productos es el alias en Producto.js
+        Producto.belongsTo(models.Tipo_Publicacion, {
+            as: "tipoPublicacion",
+            foreignKey: "id",
+        });
+    };
 
     return Producto;
 };

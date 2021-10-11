@@ -5,6 +5,8 @@
     flex-wrap: wrap;
     font-size: 13px;
     padding: 10px;
+    overflow-y: scroll;
+    height: 225px;
 }
 
 .cuponDisponible {

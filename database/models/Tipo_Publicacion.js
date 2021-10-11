@@ -1,7 +1,6 @@
 //Mapeo de Modelo a tabla Tipo_Publicacion
-
 module.exports = (sequelize, dataTypes) => {
-    let alias = "TipoPublicacion";
+    let alias = "Tipo_Publicacion";
 
     let cols = {
         id: {
@@ -25,7 +24,16 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const tipo_publicacion = sequelize.define(alias, cols, config);
+    let Tipo_Publicacion = sequelize.define(alias, cols, config);
 
-    return tipo_publicacion;
+    //establezco relacion con Productos: tipo_publicacion tiene muchos productos
+    Tipo_Publicacion.associate = function(models) {
+        //Models.Productos es el alias en Producto.js
+        Tipo_Publicacion.hasMany(models.Productos, {
+            as: "producto",
+            foreignKey: "id",
+        });
+    };
+
+    return Tipo_Publicacion;
 };
