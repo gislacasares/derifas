@@ -9,9 +9,9 @@
 
       <div class="producto-content">
         <div class="flex">
-          <p class="precio-producto">$ <%=prod.precio%></p>
+          <p class="precio-producto">Precio: $ <%=prod.precio%></p>
           <p class="precio-cupon">
-            $ <%= Math.round(prod.precio / prod.total_cupones) %>
+            Valor Cupón: $ <%= ((prod.precio / prod.total_cupones)) %>
           </p>
         </div>
         <div class="flex">
