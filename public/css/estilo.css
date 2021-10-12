@@ -12,6 +12,15 @@ main {
     background-color: white;
 }
 
+.banner {
+    height: 150px;
+    border: gray;
+    border-style: dotted;
+    margin: 10px;
+    text-align: center;
+    font-size: 5rem;
+}
+
 .flex {
     display: flex;
     flex-wrap: wrap;

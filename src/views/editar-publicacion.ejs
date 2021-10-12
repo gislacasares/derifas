@@ -2,7 +2,7 @@
 <html lang="es">
 
 <!--Incluye el Head-->
-<%- include('./partials/head', {title: 'Modificar Publicación'})%>
+<%- include('./partials/head', {title: 'Editar Publicación'})%>
 
     <body>
         <header>
@@ -20,9 +20,10 @@
                 <div class="login-form">
                     <form action="/producto/actualizar/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <!--Para que envie archivos-->
-                        <h3>Estás editando el producto #
-                            <i><%= producto.id %></i>
-                        </h3>
+                        <h2>Estás editando el producto #
+                            <%=producto.id%> -
+                                <%=producto.nombre%>
+                        </h2>
                         <label for="titulo">Título</label>
                         <input type="text" name="titulo" id="titulo" value="<%=producto.nombre%>">
                         </br>

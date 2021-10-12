@@ -63,7 +63,7 @@ router.post(
 );
 
 /*** EDITAR UN PRODUCTO ***/
-router.get("/modificar/:id", productosController.modificar);
+router.get("/editar/:id", productosController.editar);
 
 /*** Procesamiento del formulario de edición de producto ***/
 router.put(

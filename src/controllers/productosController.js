@@ -14,15 +14,15 @@ const controladorProducto = {
     //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
     //index: mostrar listado de productos
     /*
-                                        mostrar: (req, res) => {
-                                            const producto = productosService.buscarUnProductoPorId(req.params.id);
+                                          mostrar: (req, res) => {
+                                              const producto = productosService.buscarUnProductoPorId(req.params.id);
 
-                                            const cuponera = cuponesService.buscarCuponeraPorIdDeProducto(
-                                                req.params.id
-                                            );
-                                            res.render("producto-detalle", { producto: producto });
-                                        },
-                                        */
+                                              const cuponera = cuponesService.buscarCuponeraPorIdDeProducto(
+                                                  req.params.id
+                                              );
+                                              res.render("producto-detalle", { producto: producto });
+                                          },
+                                          */
     mostrar_v2: async(req, res) => {
         const producto = await productosService.findOneProduct(req.params.id);
         const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(
@@ -41,20 +41,20 @@ const controladorProducto = {
     },
 
     /*
-                        crearProducto: (req, res) => {
-                            //En el request llega el resultado de la validación del formulario
-                            const errors = validationResult(req);
-                            if (errors.isEmpty()) {
-                                const productoId = productosService.crearUnProducto(req.body, req.file);
-                                //cuponesService.crearCuponera(req.body, productoId);
-                                //Redirecciono a home
-                                res.redirect("/");
-                            } else {
-                                //return res.status(400).json({ errors: errors.array() });
-                                res.redirect("crear-publicacion", { errors: errors.array() });
-                            }
-                        },
-                        */
+                          crearProducto: (req, res) => {
+                              //En el request llega el resultado de la validación del formulario
+                              const errors = validationResult(req);
+                              if (errors.isEmpty()) {
+                                  const productoId = productosService.crearUnProducto(req.body, req.file);
+                                  //cuponesService.crearCuponera(req.body, productoId);
+                                  //Redirecciono a home
+                                  res.redirect("/");
+                              } else {
+                                  //return res.status(400).json({ errors: errors.array() });
+                                  res.redirect("crear-publicacion", { errors: errors.array() });
+                              }
+                          },
+                          */
 
     createOneProduct: async(req, res) => {
         //Obtengo el id del producto recien creado para crear su cuponera
@@ -72,7 +72,7 @@ const controladorProducto = {
     },
 
     //Modificar un producto
-    modificar: (req, res) => {
+    editar: (req, res) => {
         const producto = productosService.buscarUnProductoPorId(req.params.id);
 
         res.render("editar-publicacion", { producto: producto });
