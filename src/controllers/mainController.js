@@ -19,10 +19,6 @@ const controller = {
         const ultimaOportunidadProductos =
             await productosService.filtradoPorUltimaOportunidad();
 
-        /*const ultimaOportunidadProductos = productos.filter((prod) => {
-                                                            return prod.ultima_oportunidad == true;
-                                                        });*/
-
         //renderizar la vista index con esos arrays
         res.render("index", { novedadesProductos, ultimaOportunidadProductos });
     },

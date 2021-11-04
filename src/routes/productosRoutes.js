@@ -76,5 +76,9 @@ router.put(
 /*** ELIMINAR UN PRODUCTO ***/
 router.delete("/borrar/:id", logDBMiddleware, productosController.borrar);
 
+/*** APIS ***/
+router.get("/mostrar_novedades_api", logDBMiddleware, productosController.mostrar_novedades_api);
+router.get("/mostrar_ultimas_oportunidades_api", logDBMiddleware, productosController.mostrar_ultimas_oportunidades_api);
+
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;

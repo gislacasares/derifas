@@ -13,16 +13,7 @@ const usuariosService = require("../services/usuarios-service");
 const controladorProducto = {
     //Funciones internas necesarias que no son para mostrar el producto pero si para procesarlos
     //index: mostrar listado de productos
-    /*
-                                          mostrar: (req, res) => {
-                                              const producto = productosService.buscarUnProductoPorId(req.params.id);
 
-                                              const cuponera = cuponesService.buscarCuponeraPorIdDeProducto(
-                                                  req.params.id
-                                              );
-                                              res.render("producto-detalle", { producto: producto });
-                                          },
-                                          */
     mostrar_v2: async(req, res) => {
         const producto = await productosService.findOneProduct(req.params.id);
         const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(
@@ -34,6 +25,34 @@ const controladorProducto = {
             producto: producto,
             cuponera: cuponera,
         });
+    },
+
+    mostrar_v2_api: async(req, res) => {
+        const producto = await productosService.findOneProduct(req.params.id);
+        const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(
+            producto.id
+        );
+        console.log(cuponera);
+
+        res.json(producto);
+    },
+
+    mostrar_novedades_api: async(req, res) => {
+        //Creo 2 arrays:
+        // Productos Novedad
+        const novedadesProductos = await productosService.filtradoPorNovedad();
+
+        //devuelvo el json
+        res.json(novedadesProductos);
+    },
+
+    mostrar_ultimas_oportunidades_api: async(req, res) => {
+        //Creo 2 arrays:
+        // Productos Novedad
+        const ultimaOportunidadProductos = await productosService.filtradoPorUltimaOportunidad();
+
+        //devuelvo el json
+        res.json(ultimaOportunidadProductos);
     },
 
     publicar: (req, res) => {
