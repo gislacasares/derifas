@@ -42,6 +42,12 @@ const productosService = {
         return productosUltimaOportunidad;
     },
 
+    mostrar_productos_azar: async() => {
+        const productosAll = await db.Productos.findAll();
+        return productosAll;
+
+    },
+
     createOneProduct: async(payload, imagen) => {
         const prod = await db.Productos.create({
             usuario_id: 5,

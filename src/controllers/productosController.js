@@ -46,6 +46,21 @@ const controladorProducto = {
         res.json(novedadesProductos);
     },
 
+    mostrar_productos_azar_api: async(req, res) => {
+        const productosAll = await productosService.mostrar_productos_azar();
+        const TOTAL_PRODUCTOS = 10;
+
+        let productosAzar = [];
+
+        for (i = 0; i < TOTAL_PRODUCTOS; i++) {
+            productosAzar.push(productosAll[Math.floor(Math.random() * productosAll.length)]);
+        }
+
+        res.json(productosAzar);
+
+
+    },
+
     mostrar_ultimas_oportunidades_api: async(req, res) => {
         //Creo 2 arrays:
         // Productos Novedad
