@@ -70,6 +70,12 @@ const controladorProducto = {
         res.json(ultimaOportunidadProductos);
     },
 
+    buscar_por_palabra_clave: async(req, res) => {
+        console.log(req.query);
+        const productosEncontrados = await productosService.buscarPorPalabraClave(req.query.nombreProducto);
+        res.json(productosEncontrados);
+    },
+
     publicar: (req, res) => {
         res.render("crear-publicacion");
     },

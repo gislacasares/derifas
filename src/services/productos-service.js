@@ -3,6 +3,7 @@ const fs = require("fs");
 
 //Importo para usar la DB
 const db = require("../../database/models");
+const { Op } = require("sequelize");
 
 //importo el json de productos
 const productosFilePath = path.join(
@@ -97,6 +98,18 @@ const productosService = {
             })
         );
         return productoMaximoId;
+    },
+
+    buscarPorPalabraClave: async(nombreProducto) => {
+        const productosEncontrados = await db.Productos.findAll({
+            where: {
+                nombre: {
+                    [Op.like]: `%${nombreProducto}%`,
+                }
+            }
+        });
+        console.log(productosEncontrados);
+        return productosEncontrados;
     },
 
     crearUnProducto(payload, imagen) {

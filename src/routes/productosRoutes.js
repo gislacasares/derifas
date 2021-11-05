@@ -80,6 +80,6 @@ router.delete("/borrar/:id", logDBMiddleware, productosController.borrar);
 router.get("/mostrar_novedades_api", logDBMiddleware, productosController.mostrar_novedades_api);
 router.get("/mostrar_ultimas_oportunidades_api", logDBMiddleware, productosController.mostrar_ultimas_oportunidades_api);
 router.get("/mostrar_productos_azar_api", logDBMiddleware, productosController.mostrar_productos_azar_api);
-
+router.get("/buscar", logDBMiddleware, productosController.buscar_por_palabra_clave);
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;
