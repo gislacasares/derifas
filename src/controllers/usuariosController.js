@@ -21,14 +21,16 @@ const usuariosController = {
     },
     crearUsuario: (req, res) => {
         usuariosService.create(req.body);
-        /*db.Usuarios.create({
-                                                    nombre: req.body.nombre,
-                                                    apellido: req.body.apellido,
-                                                    password: req.body.password,
-                                                    fecha_nacimiento: req.body.fechaNacimiento,
-                                                    email: req.body.email,
-                                                    telefono: req.body.telefono,
-                                                });*/
+        /*
+        db.Usuarios.create({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            password: req.body.password,
+            fecha_nacimiento: req.body.fechaNacimiento,
+            email: req.body.email,
+            telefono: req.body.telefono,
+        });
+        */
         res.redirect("/");
     },
     list: (req, res) => {

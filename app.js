@@ -32,6 +32,14 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//Me permite solicitar peticiones entre distintos dominios
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
 //Seteos de endpoints
 app.use("/", mainRoutes);
 app.use("/usuarios", usuariosroutes);
