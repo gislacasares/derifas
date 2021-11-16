@@ -37,6 +37,11 @@ const controladorProducto = {
         res.json(producto);
     },
 
+    todos_api: async(req, res) => {
+        const productosAll = await productosService.mostrar_productos();
+        res.json(productosAll);
+    },
+
     mostrar_novedades_api: async(req, res) => {
         //Creo 2 arrays:
         // Productos Novedad
@@ -47,7 +52,7 @@ const controladorProducto = {
     },
 
     mostrar_productos_azar_api: async(req, res) => {
-        const productosAll = await productosService.mostrar_productos_azar();
+        const productosAll = await productosService.mostrar_productos();
         const TOTAL_PRODUCTOS = 10;
 
         let productosAzar = [];

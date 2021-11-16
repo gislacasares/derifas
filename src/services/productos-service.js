@@ -43,7 +43,7 @@ const productosService = {
         return productosUltimaOportunidad;
     },
 
-    mostrar_productos_azar: async() => {
+    mostrar_productos: async() => {
         const productosAll = await db.Productos.findAll();
         return productosAll;
 
@@ -71,15 +71,13 @@ const productosService = {
     },
 
     findOneProduct: async(id_producto) => {
-        const producto = await db.Productos.findByPk(
-            id_producto
-            /*, {
-                                               //Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
-                                               include: [{ associate: "tipoPublicacion" }],
-                                           }*/
-        );
-        //const tipo_publicacion =
-
+        const producto = await db.Productos.findByPk(id_producto);
+        /*
+        {
+        Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
+        include: [{ associate: "tipoPublicacion" }],
+        }
+        */
         return producto;
     },
 

@@ -81,5 +81,7 @@ router.get("/mostrar_novedades_api", logDBMiddleware, productosController.mostra
 router.get("/mostrar_ultimas_oportunidades_api", logDBMiddleware, productosController.mostrar_ultimas_oportunidades_api);
 router.get("/mostrar_productos_azar_api", logDBMiddleware, productosController.mostrar_productos_azar_api);
 router.get("/buscar", logDBMiddleware, productosController.buscar_por_palabra_clave);
+router.get("/mostrar_api/:id", logDBMiddleware, productosController.mostrar_v2_api);
+router.get("/todos_api", logDBMiddleware, productosController.todos_api);
 //exporto módulo router para hacerlo visible desde afuera
 module.exports = router;
