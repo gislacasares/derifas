@@ -54,3 +54,12 @@ VALUES (15, 'Nuevo', 'TITULO_PROD', 2990, 5, SYSDATE()+100, 25, 25, 'DESCRIP_PRO
 /*** TABLA TIPO_PUBLICACION ***/
 INSERT INTO tipo_publicacion (tipo, estado) VALUES ('Sale o Sale', 1);
 INSERT INTO tipo_publicacion (tipo, estado) VALUES ('Tiempo Límite', 1);
+
+/*** TABLA PREGUNTA ***/
+INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, usuario_creacion, usuario_modificacion, fecha_creacion, fecha_modificacion)
+	VALUES (5,5, true, 'Hola, haces envios y cual es la zona de entrega?', 5, 5, SYSDATE(), SYSDATE());
+    
+INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, usuario_creacion, usuario_modificacion, fecha_creacion, fecha_modificacion)
+	VALUES (5,5, true, 'Hola, tenes stock??', 5, 5, SYSDATE(), SYSDATE());
+
+    

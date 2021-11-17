@@ -7,23 +7,41 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false,
         },
-        usuario_id: {
+        id_usuario: {
             type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false,
         },
-        estado_producto: {
+        id_publicacion: {
+            type: dataTypes.INTEGER,
+            foreignKey: true,
+            allowNull: false,
+        },
+        estado: {
             type: dataTypes.STRING(10),
             allowNull: false,
         },
-        nombre: {
-            type: dataTypes.STRING(250),
+        pregunta_descripcion: {
+            type: dataTypes.TEXT,
             allowNull: false,
         },
-        precio: {
-            type: dataTypes.FLOAT,
+        usuario_creacion: {
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
+        usuario_modificacion: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+        },
+        fecha_creacion: {
+            type: dataTypes.DATE,
+            allowNull: false
+        },
+        fecha_modificacion: {
+            type: dataTypes.DATE,
+            allowNull: false
+        },
+
         tipo_publicacion: {
             type: dataTypes.INTEGER,
             allowNull: false,
@@ -65,20 +83,22 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "Pregunta",
-        timestamps: true,
+        timestamp: true,
+        createdAt: "fecha_creacion",
+        updatedAt: "fecha_modificacion",
     };
 
     let Pregunta = sequelize.define(alias, cols, config);
 
-    //establezco relacion con Productos: tipo_publicacion tiene muchos productos
-    /*
+    //establezco relacion con Productos: Productos tiene 0 a N preguntas
+
     Pregunta.associate = function(models) {
-        //Models.Productos es el alias en Producto.js
-        Pregunta.belongsTo(models.Tipo_Publicacion, {
-            as: "tipoPublicacion",
-            foreignKey: "id",
+        //Models.Preguntas es el alias en Pregunta.js
+        Pregunta.belongsTo(models.Productos, {
+            as: "productos",
+            foreignKey: "id_publicacion",
         });
     };
-*/
+
     return Pregunta;
 };

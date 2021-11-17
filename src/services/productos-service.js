@@ -71,7 +71,12 @@ const productosService = {
     },
 
     findOneProduct: async(id_producto) => {
-        const producto = await db.Productos.findByPk(id_producto);
+        const producto = await db.Productos.findOne({
+            where: { id: id_producto },
+            include: [
+                { association: "preguntas" }
+            ]
+        });
         /*
         {
         Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
@@ -81,6 +86,14 @@ const productosService = {
         return producto;
     },
 
+    /*
+    findOneProduct: async(id_producto) => {
+        const producto = await db.Productos.findByPk(id_producto);
+
+        return producto;
+    },
+    
+    */
 
     buscarUnProductoPorId(id) {
         const producto = productos.find((prod) => {
