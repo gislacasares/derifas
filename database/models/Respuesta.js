@@ -1,82 +1,64 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Productos";
+    let alias = "Respuestas";
     let cols = {
-        id: {
+        id_respuesta: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        usuario_id: {
+        id_pregunta: {
             type: dataTypes.INTEGER,
             foreignKey: true,
             allowNull: false,
         },
-        estado_producto: {
-            type: dataTypes.STRING(10),
-            allowNull: false,
-        },
-        nombre: {
-            type: dataTypes.STRING(250),
-            allowNull: false,
-        },
-        precio: {
-            type: dataTypes.FLOAT,
-            allowNull: false,
-        },
-        tipo_publicacion: {
+        id_usuario: {
             type: dataTypes.INTEGER,
+            foreignKey: true,
             allowNull: false,
         },
-
-        fecha_hora_limite: {
-            type: dataTypes.DATE,
-            allowNull: false,
-        },
-        total_cupones: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-        cupones_disponibles: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-        descripcion: {
+        respuesta_descripcion: {
             type: dataTypes.TEXT,
-            allowNull: true,
-        },
-        imagen: {
-            type: dataTypes.STRING(250),
             allowNull: false,
         },
-        novedad: {
-            type: dataTypes.BOOLEAN,
+        tiempo_demora: {
+            type: dataTypes.BIGINT,
+            allowNull: false
+        },
+        usuario_creacion: {
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
-        ultima_oportunidad: {
-            type: dataTypes.BOOLEAN,
+        usuario_modificacion: {
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
-        activo: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
+        fecha_creacion: {
+            type: dataTypes.DATE,
+            allowNull: false
+        },
+        fecha_modificacion: {
+            type: dataTypes.DATE,
+            allowNull: false
         },
     };
 
     let config = {
-        tableName: "Productos",
-        timestamps: false,
+        tableName: "Respuesta",
+        timestamps: true,
+        createdAt: "fecha_creacion",
+        updatedAt: "fecha_modificacion",
     };
 
-    let Producto = sequelize.define(alias, cols, config);
+    let Respuesta = sequelize.define(alias, cols, config);
 
     //establezco relacion con Productos: tipo_publicacion tiene muchos productos
-    Producto.associate = function(models) {
+    Respuesta.associate = function(models) {
         //Models.Productos es el alias en Producto.js
-        Producto.belongsTo(models.Tipo_Publicacion, {
-            as: "tipoPublicacion",
-            foreignKey: "id",
+        Respuesta.belongsTo(models.Preguntas, {
+            as: "pregunta",
+            foreignKey: "id_pregunta",
         });
     };
 
-    return Producto;
+    return Respuesta;
 };

@@ -72,13 +72,14 @@ module.exports = (sequelize, dataTypes) => {
     //establezco relacion con Productos: tipo_publicacion tiene muchos productos
     Producto.associate = function(models) {
         //Models.Productos es el alias en Producto.js
+
         Producto.belongsTo(models.Tipo_Publicacion, {
             as: "tipoPublicacion",
             foreignKey: "id",
         });
 
         Producto.hasMany(models.Preguntas, {
-            as: "preguntas",
+            as: 'preguntas',
             foreignKey: "id_publicacion",
         });
     };

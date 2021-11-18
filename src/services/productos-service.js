@@ -74,15 +74,9 @@ const productosService = {
         const producto = await db.Productos.findOne({
             where: { id: id_producto },
             include: [
-                { association: "preguntas" }
+                { association: 'preguntas' }
             ]
         });
-        /*
-        {
-        Aca le digo que me traiga el tipoPublicacion del Producto para mostrarlo en la vista
-        include: [{ associate: "tipoPublicacion" }],
-        }
-        */
         return producto;
     },
 

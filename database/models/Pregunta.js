@@ -82,7 +82,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: "Pregunta",
+        tableName: "pregunta",
         timestamp: true,
         createdAt: "fecha_creacion",
         updatedAt: "fecha_modificacion",
@@ -97,6 +97,11 @@ module.exports = (sequelize, dataTypes) => {
         Pregunta.belongsTo(models.Productos, {
             as: "productos",
             foreignKey: "id_publicacion",
+        });
+
+        Pregunta.belongsTo(models.Respuestas, {
+            as: "respuesta",
+            foreignKey: "id_pregunta",
         });
     };
 
