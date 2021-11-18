@@ -62,4 +62,8 @@ INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, 
 INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, usuario_creacion, usuario_modificacion, fecha_creacion, fecha_modificacion)
 	VALUES (5,5, true, 'Hola, tenes stock??', 5, 5, SYSDATE(), SYSDATE());
 
+INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, usuario_creacion, usuario_modificacion, fecha_creacion, fecha_modificacion)
+	VALUES (5,435, true, 'Tenes local en el barrio de ONCE?', 5, 5, SYSDATE(), SYSDATE()); 
     
+INSERT INTO Pregunta (id_usuario, id_publicacion, estado, pregunta_descripcion, usuario_creacion, usuario_modificacion, fecha_creacion, fecha_modificacion)
+	VALUES (10,435, true, 'Envias a la Patagonia?', 5, 5, SYSDATE(), SYSDATE());     

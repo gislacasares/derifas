@@ -14,10 +14,18 @@ ultimo_acceso TINYINT NULL,
 fecha_creacion TIMESTAMP NOT NULL,
 PRIMARY KEY(id)
 );
-
+CREATE TABLE Categoria(
+	id_categoria INT NOT NULL AUTO_INCREMENT,
+    categoria_nombre VARCHAR(50) NOT NULL,
+    estado TINYINT NOT NULL,
+    fecha_creacion DATE NOT NULL,
+    fecha_modificacion DATE NOT NULL,
+    PRIMARY KEY (id_categoria)
+);
 CREATE TABLE Productos(
 	id INT NOT NULL AUTO_INCREMENT,
     usuario_id INT NOT NULL,
+    id_categoria INT NOT NULL,
     estado_producto VARCHAR(10) NOT NULL,
     nombre VARCHAR(250) NOT NULL,
     precio FLOAT NOT NULL,
@@ -33,6 +41,7 @@ CREATE TABLE Productos(
     fecha_creacion TIMESTAMP,
     PRIMARY KEY(id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria) 
 );
 
 CREATE TABLE cuponera(

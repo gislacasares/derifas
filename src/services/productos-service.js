@@ -75,6 +75,9 @@ const productosService = {
 
             include: [{
                     association: 'preguntas',
+                    include: [
+                        { association: 'respuesta' },
+                    ],
                     //attributes: ['pregunta_descripcion', 'id']
                 },
                 { association: 'tipoPublicacion' },
