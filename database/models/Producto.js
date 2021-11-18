@@ -75,12 +75,13 @@ module.exports = (sequelize, dataTypes) => {
 
         Producto.belongsTo(models.Tipo_Publicacion, {
             as: "tipoPublicacion",
-            foreignKey: "id",
+            foreignKey: "tipo_publicacion",
         });
 
         Producto.hasMany(models.Preguntas, {
             as: 'preguntas',
-            foreignKey: "id_publicacion",
+            //foreignKey: "id_publicacion",
+            foreignKey: "id_pregunta",
         });
     };
 

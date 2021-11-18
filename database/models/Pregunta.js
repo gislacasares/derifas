@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Preguntas";
     let cols = {
-        pregunta_id: {
+        id_pregunta: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
@@ -40,44 +40,6 @@ module.exports = (sequelize, dataTypes) => {
         fecha_modificacion: {
             type: dataTypes.DATE,
             allowNull: false
-        },
-
-        tipo_publicacion: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-
-        fecha_hora_limite: {
-            type: dataTypes.DATE,
-            allowNull: false,
-        },
-        total_cupones: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-        cupones_disponibles: {
-            type: dataTypes.INTEGER,
-            allowNull: false,
-        },
-        descripcion: {
-            type: dataTypes.TEXT,
-            allowNull: true,
-        },
-        imagen: {
-            type: dataTypes.STRING(250),
-            allowNull: false,
-        },
-        novedad: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        ultima_oportunidad: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
-        },
-        activo: {
-            type: dataTypes.BOOLEAN,
-            allowNull: false,
         },
     };
 
