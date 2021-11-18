@@ -80,8 +80,13 @@ module.exports = (sequelize, dataTypes) => {
 
         Producto.hasMany(models.Preguntas, {
             as: 'preguntas',
-            //foreignKey: "id_publicacion",
-            foreignKey: "id_pregunta",
+            //Acá va el id de la otra tabla que me relaciona a esta tabla de Producto
+            foreignKey: "id_publicacion",
+        });
+
+        Producto.hasMany(models.Cuponera, {
+            as: 'cuponera',
+            foreignKey: 'producto_id',
         });
     };
 

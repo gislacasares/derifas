@@ -25,7 +25,6 @@ const productosService = {
                 ["id", "DESC"]
             ],
         });
-        //console.log(productosNovedad);
         return productosNovedad;
     },
 
@@ -74,22 +73,16 @@ const productosService = {
         const producto = await db.Productos.findOne({
             where: { id: id_producto },
 
-            include: [
-                { association: 'preguntas' },
-                { association: 'tipoPublicacion' }
+            include: [{
+                    association: 'preguntas',
+                    //attributes: ['pregunta_descripcion', 'id']
+                },
+                { association: 'tipoPublicacion' },
+                { association: 'cuponera' }
             ]
         });
         return producto;
     },
-
-    /*
-    findOneProduct: async(id_producto) => {
-        const producto = await db.Productos.findByPk(id_producto);
-
-        return producto;
-    },
-    
-    */
 
     buscarUnProductoPorId(id) {
         const producto = productos.find((prod) => {

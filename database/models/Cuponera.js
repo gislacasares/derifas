@@ -51,5 +51,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const cuponera = sequelize.define(alias, cols, config);
 
+    cuponera.associate = function(models) {
+        //Models.Preguntas es el alias en Pregunta.js
+        cuponera.belongsTo(models.Productos, {
+            as: "producto",
+            foreignKey: "producto_id",
+        });
+
+    };
+
     return cuponera;
 };

@@ -29,10 +29,7 @@ const controladorProducto = {
 
     mostrar_v2_api: async(req, res) => {
         const producto = await productosService.findOneProduct(req.params.id);
-        const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(
-            producto.id
-        );
-        console.log(cuponera);
+        //const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(producto.id);
 
         res.json(producto);
     },
