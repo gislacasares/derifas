@@ -32,13 +32,21 @@ const controladorProducto = {
     mostrar_novedades: async(req, res) => {
         const novedadesProductos = await productosService.filtradoPorNovedad();
         //devuelvo el json
-        res.json(novedadesProductos);
+        res.status(200).json({
+            total: novedadesProductos.length,
+            data: novedadesProductos,
+            status: 200,
+        });
     },
 
     mostrar_ultimas_oportunidades: async(req, res) => {
         const ultimaOportunidadProductos = await productosService.filtradoPorUltimaOportunidad();
         //devuelvo el json
-        res.json(ultimaOportunidadProductos);
+        res.status(200).json({
+            total: ultimaOportunidadProductos.length,
+            data: ultimaOportunidadProductos,
+            status: 200,
+        });
     },
 
     mostrar_productos_azar: async(req, res) => {
@@ -50,13 +58,21 @@ const controladorProducto = {
             productosAzar.push(productosAll[Math.floor(Math.random() * productosAll.length)]);
         }
 
-        res.json(productosAzar);
+        res.status(200).json({
+            total: productosAzar.length,
+            data: productosAzar,
+            status: 200,
+        });
     },
 
     buscar: async(req, res) => {
         console.log(req.query);
         const productosEncontrados = await productosService.buscarPorPalabraClave(req.query.nombreProducto);
-        res.json(productosEncontrados);
+        res.status(200).json({
+            total: productosEncontrados.length,
+            data: productosEncontrados,
+            status: 200,
+        });
     },
 
     publicar: (req, res) => {

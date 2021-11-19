@@ -70,9 +70,7 @@ const productosService = {
     },
 
     findOneProduct: async(id_producto) => {
-        const producto = await db.Productos.findOne({
-            where: { id: id_producto },
-
+        const producto = await db.Productos.findByPk(id_producto, {
             include: [{
                     association: 'preguntas',
                     include: [
