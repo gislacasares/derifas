@@ -5,7 +5,7 @@ CREATE TABLE Usuarios(
 id INT NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(100) NOT NULL, 
 apellido VARCHAR(100) NOT NULL, 
-password VARCHAR(50) NOT NULL,
+password VARCHAR(100) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
 email VARCHAR(100) NOT NULL,
 telefono  VARCHAR(50)  NULL, 
@@ -98,3 +98,4 @@ CREATE TABLE Respuesta(
 	FOREIGN KEY (id_usuario) REFERENCES Usuarios(id),
     FOREIGN KEY (id_pregunta) REFERENCES Pregunta(id_pregunta)   
 );
+

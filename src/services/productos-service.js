@@ -85,8 +85,8 @@ const productosService = {
         return producto;
     },
 
-    buscarUnProductoPorId(id) {
-        const producto = productos.find((prod) => {
+    buscarUnProductoPorId: async(id) => {
+        const producto = await productos.find((prod) => {
             return prod.id == id;
         });
         return producto;

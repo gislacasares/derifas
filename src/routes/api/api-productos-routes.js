@@ -58,15 +58,12 @@ router.get("/show_random_products", logDBMiddleware, productosController.mostrar
 router.get("/search", logDBMiddleware, productosController.buscar);
 
 /*** CREAR UN PRODUCTO ***/
-//router.get("/post", logDBMiddleware, productosController.publicar);
 /*** Procesamiento del formulario de creación de producto ***/
-/*
 router.post(
-    "/publicar",
+    "/create",
     upload.single("imagenProducto"),
     logDBMiddleware,
-    validateCreacionProductoForm,
-    //productosController.crearProducto
+    //validateCreacionProductoForm,
     productosController.createOneProduct
 );
 

@@ -8,7 +8,8 @@ const usuariosController = require("../controllers/usuariosController");
 /*** CREAR UN USUARIO ***/
 router.get("/registro", logDBMiddleware, usuariosController.registro);
 router.post("/registro", logDBMiddleware, usuariosController.crearUsuario);
-router.get("/ingresar", logDBMiddleware, usuariosController.ingresar);
+router.get("/login", logDBMiddleware, usuariosController.login);
+router.post("/login", logDBMiddleware,/*Falta validacion de chequear formato email y pass*/ usuariosController.procesarLogin);
 router.get("/listar", logDBMiddleware, usuariosController.list);
 
 //exporto módulo router para hacerlo visible desde afuera

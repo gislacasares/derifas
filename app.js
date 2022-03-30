@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+const session = require('express-session');
 
 //Configuración para métodos override HTTP de PUT y DELETE
 const methodOverride = require("method-override");
@@ -12,13 +13,21 @@ const productosRoutes = require("./src/routes/productosRoutes");
 
 
 //Levanto la app localmente en el port 3000 o con el port que me asigne Heroku
-app.listen(process.env.PORT || 3000, () => {
-    console.log("Webserver levantado, corriendo y escuchando en el port 3000");
+app.listen(process.env.PORT || 3001, () => {
+    console.log("Webserver levantado, corriendo y escuchando en el port 3001");
 });
 
-console.log(__dirname);
 //Va a servir los archivos publicos desde /img (esta es su raíz)
 app.use(express.static(path.join(__dirname, "/public")));
+
+//Configuro como middleware para usar Session en toda la app
+app.use(
+    session({
+        secret: 'esto es una frase secreta que se utiliza', 
+        resave: true,
+        saveUninitialized: true
+    })
+);
 
 //Configuración del motor de vistas EJS
 app.set("view engine", "ejs");
@@ -31,6 +40,8 @@ app.use(methodOverride("_method"));
 
 //Configuración del entorno para capturar los datos de formulario como objeto literal y tambien transformarlo a JSON
 app.use(express.urlencoded({ extended: false }));
+
+//Configuración para procesar datos en el body por JSON
 app.use(express.json());
 
 //Me permite solicitar peticiones entre distintos dominios
@@ -45,6 +56,7 @@ app.use(function(req, res, next) {
 app.use("/", mainRoutes);
 app.use("/usuarios", usuariosroutes);
 app.use("/productos", productosRoutes);
+
 
 //404 not found
 app.use((req, res, next) => {

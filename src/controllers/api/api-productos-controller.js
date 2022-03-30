@@ -17,12 +17,16 @@ const controladorProducto = {
         const producto = await productosService.findOneProduct(req.params.id);
         //const cuponera = await cuponeraService.buscarCuponeraPorIdDeProducto(producto.id);
 
-        res.json(producto);
+        res.status(200).json({
+            data: producto,
+            status: 200,
+            url: '/api/product/show/id',
+        });
     },
 
     mostrar_todos_productos: async(req, res) => {
         const productosAll = await productosService.mostrar_productos();
-        res.status(200).json({
+        res.json({
             total: productosAll.length,
             data: productosAll,
             status: 200,
@@ -66,19 +70,15 @@ const controladorProducto = {
     },
 
     buscar: async(req, res) => {
-        console.log(req.query);
+
         const productosEncontrados = await productosService.buscarPorPalabraClave(req.query.nombreProducto);
+
         res.status(200).json({
             total: productosEncontrados.length,
             data: productosEncontrados,
             status: 200,
         });
     },
-
-    publicar: (req, res) => {
-        res.render("crear-publicacion");
-    },
-
 
     createOneProduct: async(req, res) => {
         //Obtengo el id del producto recien creado para crear su cuponera

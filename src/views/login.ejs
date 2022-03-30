@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--Incluye el Head-->
+<%- include('./partials/head', {title: 'Login de usuario'})%>
+
+    <body>
+        <header>
+            <!--Logo y banner-->
+            <%- include('./partials/banner') %>
+
+                <!--Barra de Navegación-->
+                <%- include('./partials/nav-bar')%>
+
+
+                    <!--Barra de Búsqueda-->
+                    <!--Enlaces a redes sociales-->
+        </header>
+        <main>
+            <div class="login-page">
+                <div class="form">
+                    <div class="login-form">
+                        <form method="POST" action="/usuarios/login">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email">
+                            </br>
+                            
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="password">
+                            </br>
+                            
+                            <button type="submit">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- footer-->
+            <%- include('./partials/footer') %>
+        </footer>
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <% if(alert) { %>
+                <script>
+                    Swal.fire({
+                        title: '<%= alertTitle %>',
+                        text: '<%= alertMessage %>',
+                        icon: '<%= alertIcon %>',
+                        <% if(showConfirmButton) { %>
+                            confirmButtonText: '<%= confirmButtonText %>'
+                        <% } %>
+                    }).then(()=>{
+                        window.location = '/<%= ruta %>';
+                    })                
+                </script>                
+            <% } %>
+
+    </body>
+
+</html>
